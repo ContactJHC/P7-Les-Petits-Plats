@@ -11,7 +11,7 @@ recipes.forEach((e)=>{
     // comparaisons entre chaînes de caractères en minuscules
     arrayName.push(e.name.toLocaleLowerCase())
     // le tableau d'ingrédients est un tableau de tableaux
-    e.ingredients.forEach(sousE => arrayIngredient.push(sousE.ingredient))
+    e.ingredients.forEach(sousE => arrayIngredient.push(sousE.ingredient.toLocaleLowerCase()))
     arrayDescription.push(e.description.toLocaleLowerCase())
 })
 
@@ -36,8 +36,16 @@ userInput.addEventListener('keyup', ()=>{
         arrayIngredientSuggestions.forEach(suggestion => {
             listeSuggestions += `<div class = "oneMainSuggestion">${suggestion}</div>`
         })
+        console.log(listeSuggestions);
+        // recherche dans les descriptions
+        const arrayDescriptionSuggestions = arrayDescription.filter(description => 
+            description.includes(inputValue))
+        arrayDescriptionSuggestions.forEach(suggestion => 
+            listeSuggestions += `<div class = "oneMainSuggestion">${suggestion}</div>`
+        )
         mainSuggestions.innerHTML = listeSuggestions
         console.log(listeSuggestions);
+
     }
     
 })
