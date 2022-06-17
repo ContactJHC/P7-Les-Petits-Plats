@@ -11,11 +11,11 @@ recipes.forEach((e)=>{
     // comparaisons entre chaînes de caractères en minuscules
     arrayName.push(e.name.toLocaleLowerCase())
     // le tableau d'ingrédients est un tableau de tableaux
-    arrayIngredient.push(e.ingredients)
+    e.ingredients.forEach(sousE => arrayIngredient.push(sousE.ingredient))
     arrayDescription.push(e.description.toLocaleLowerCase())
 })
 
-console.log(arrayName);
+console.log(arrayIngredient);
 
 // affectation userInput à la barre de recherche
 
@@ -23,9 +23,17 @@ let userInput = document.querySelector('#searchSection__searchBar input')
 userInput.addEventListener('keyup', ()=>{
     const inputValue = userInput.value.toLocaleLowerCase()
     if (inputValue.length > 2) {
-        const arraySuggestions = arrayName.filter(nom => nom.includes(inputValue))
+        // recherche dans les noms de recettes
+        const arrayNameSuggestions = arrayName.filter(nom => nom.includes(inputValue))
         let listeSuggestions = ''
-        arraySuggestions.forEach(suggestion => {
+        arrayNameSuggestions.forEach(suggestion => {
+            listeSuggestions += `<div class = "oneMainSuggestion">${suggestion}</div>`
+        })
+        console.log(listeSuggestions);
+        // recherche dans les ingrédients
+        const arrayIngredientSuggestions = arrayIngredient.filter(ingredient =>
+            ingredient.includes(inputValue))
+        arrayIngredientSuggestions.forEach(suggestion => {
             listeSuggestions += `<div class = "oneMainSuggestion">${suggestion}</div>`
         })
         mainSuggestions.innerHTML = listeSuggestions
