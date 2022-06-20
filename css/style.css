@@ -1,4 +1,4 @@
-
+/* importation de normalize */
 @import url("normalize.css");
 
 /* couleurs de la maquette
@@ -21,9 +21,26 @@ header {
 header #logo {
     width: 30%;
 }
+
+#recipesSection {
+    margin-top: 2rem;
+}
+
+.recipesSection__card {
+    margin-bottom: 2rem;
+}
+
+.recipesSection__card__imageFictive {
+    height: 150px;
+    background-color: #c7bebeff;
+}
+
+.recipesSection__card__texteFictif {
+    height: 150px;
+}
+
 .recipesSection__card__notice p {
     overflow: hidden;
-    display: none;
 }
 
 #searchSection {
@@ -37,7 +54,7 @@ header #logo {
 
 #searchSection__searchBar input {
     border-radius: 5px;
-    padding-left: 1.5rem;
+    padding-left: 1rem;
     width: 100%;
     height: 100%;
     border: none;
@@ -143,4 +160,72 @@ header #logo {
     margin: auto;
 }
 
+.recipesSection__card__texteFictif {
+    padding: 1rem;
+    line-height: 10pt;
+    background-color: #e7e7e7ff;
+    overflow: hidden;
+}
+.recipesSection__card__texteFictif .nomIngredient{
+    font-weight: bold;
+}
+
+.recipesSection__card__texteFictif__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 1rem;
+}
+
+.recipesSection__card__texteFictif__header h1 {
+    font-size: 1rem;
+}
+
+.recipesSection__card__texteFictif__header div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.recipesSection__card__texteFictif__header object {
+    padding-right: 0.5rem;
+    height: 1.5rem;
+}
+
+.recipesSection__card__texteFictif__header p {
+    margin: 0;
+}
+
+.recipesSection__card__texteFictif__body {
+    display: flex;
+}
+
+.recipesSection__card__texteFictif__body ul {
+    list-style: none;
+    padding-inline: 0;
+    min-width: fit-content;
+    max-width: 50%;
+    font-size: 0.8rem;
+
+}
+
+.recipesSection__card__texteFictif__body li {
+    display: flex;
+    list-style: none;
+}
+
+
+.recipesSection__card__texteFictif__body p {
+    margin: 0;
+}
+
+.recipesSection__card__notice {
+    line-height: 10pt;
+    padding-left: 1rem;
+    font-size: 0.6rem;
+    overflow: hidden;
+    max-height: max-content;
+    text-overflow: ellipsis ;
+    word-break: keep-all;
+}
 
