@@ -109,12 +109,21 @@ header #logo {
     align-items: center;
     margin: 0;
     margin-top: 10px;
+    margin-right: 1vw;
     height: 2rem;
     color: white;
     font-weight: bolder;
     font-size: 0.8rem;
     border-radius: 5px;
     
+}
+
+.oneSelectedFilter.tagAppareils {
+    background-color: #68d9a4ff;
+}
+
+.oneSelectedFilter.tagUstensiles {
+    background-color: #ed6454ff;
 }
 
 .oneSelectedFilter p {

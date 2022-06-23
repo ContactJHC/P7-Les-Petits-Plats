@@ -1,5 +1,5 @@
 // données d'entrée : pour i entier, recipes[i] soit les données d'une seule recette
-// fournit en sortie : la fonction générant le HTML d'une seule card de recette
+// fournit en sortie : le HTML d'une seule card de recette
 
 function recipe(dataOneRecipe) {
     // affectation des informations de la recette

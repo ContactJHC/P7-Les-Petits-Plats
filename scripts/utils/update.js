@@ -7,7 +7,7 @@ function filtreDoublons (tableauAvecDoublons) {
 // input : tableau de recettes
 // output : un tableau de tableaux de tags d'ingrédients, 
 // d'appareils, d'ustensiles
-function updateIngredients (listeRecettes) {
+function updateTags (listeRecettes) {
     let tagsIngredients = []
     let tagsAppareils = []
     let tagsUstensiles = []
@@ -25,4 +25,3 @@ function updateIngredients (listeRecettes) {
     ]
 }
 
-console.log(updateIngredients([recipes[0], recipes[1]]));
