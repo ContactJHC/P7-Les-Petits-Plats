@@ -4,3 +4,4 @@ mainBarResearch()
 // affichage de l'ensemble des recettes
 recipesDisplay(recipes)
 
+document.querySelector('.oneSelectedFilter').addEventListener('click', recipesDelete)
