@@ -57,3 +57,57 @@ function tagsDisplay(tableauDeTableaux) {
     // imbrication des éléments
     sectionSearch.insertBefore(divFiltersRow, divChoice)
 }
+
+// déclaration des éléments communs aux fonctions suggestionsDisplay et suggestionsDelete
+const divIngredients = document.querySelector('#filterIngredients')
+const divAppareils = document.querySelector('#filterAppareils')
+const divUstensiles = document.querySelector('#filterUstensiles')
+const divListeIngredients = document.querySelector('#tagSuggestionsIngredients')
+const divListeAppareils = document.querySelector('#tagSuggestionsAppareils')
+const divListeUstensiles = document.querySelector('#tagSuggestionsUstensiles')
+
+function suggestionsDisplay(tableauDeTableaux) {
+    // création des éléments
+    const ulIngredients = document.createElement('ul')
+    const ulAppareils = document.createElement('ul')
+    const ulUstensiles = document.createElement('ul')
+    // affectation des attributs
+    // divListeIngredients.setAttribute('id', 'tagSuggestionsIngredients')
+    // divListeAppareils.setAttribute('id', 'tagSuggestionsAppareils')
+    // divListeUstensiles.setAttribute('id', 'tagSuggestionsUstensiles')
+    // divListeIngredients.setAttribute('class', 'tagSuggestions')
+    // divListeAppareils.setAttribute('class', 'tagSuggestions')
+    // divListeUstensiles.setAttribute('class', 'tagSuggestions')
+    ulIngredients.setAttribute('class', 'row')
+    ulAppareils.setAttribute('class', 'row')
+    ulUstensiles.setAttribute('class', 'row')
+    // renseignement des contenus
+    tableauDeTableaux[0].forEach(e =>
+        ulIngredients.appendChild(filterSuggestionCreation(e))
+        )
+    tableauDeTableaux[1].forEach(e =>
+        ulAppareils.appendChild(filterSuggestionCreation(e))
+        )
+    tableauDeTableaux[2].forEach(e =>
+        ulUstensiles.appendChild(filterSuggestionCreation(e))
+        )
+    // imbrication des éléments
+    divIngredients.appendChild(divListeIngredients)
+    divAppareils.appendChild(divListeAppareils)
+    divUstensiles.appendChild(divListeUstensiles)
+    divListeIngredients.appendChild(ulIngredients)
+    divListeAppareils.appendChild(ulAppareils)
+    divListeUstensiles.appendChild(ulUstensiles)
+}
+
+function suggestionsDelete() {
+    if (divIngredients.hasChildNodes()) {
+        divIngredients.removeChild(divListeIngredients)
+        divAppareils.removeChild(divListeAppareils)
+        divUstensiles.removeChild(divListeUstensiles)
+    }
+}
+
+
+
+

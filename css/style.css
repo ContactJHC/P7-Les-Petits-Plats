@@ -234,9 +234,12 @@ header #logo {
 
 }
 
-#searchSection__filters .filter:hover {
+.saisieFiltre:hover {
     cursor: pointer;
+}
 
+.filtreOuvert:hover {
+    cursor: text;
 }
 
 #searchSection__filters .filter p {

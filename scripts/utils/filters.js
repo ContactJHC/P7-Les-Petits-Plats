@@ -6,8 +6,7 @@
 const filterIngredients = document.querySelector('#filterIngredients')
 const saisieFiltreIngredients = document.querySelector('#saisieFiltreIngredients')
 const tagSuggestionsIngredients =document.querySelector('#tagSuggestionsIngredients')
-arrow = document.querySelector('#filterIngredients object')
-
+const arrowIngredients = document.querySelector('#filterIngredients object')
 
 function openFilterIngredients() {
     
@@ -15,7 +14,7 @@ function openFilterIngredients() {
     saisieFiltreIngredients.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreIngredients.setAttribute('placeholder', 'Rechercher un ingrédient')
     tagSuggestionsIngredients.style.display = 'block'
-    arrow.setAttribute('data', 'assets/icons/arrowUp.svg')
+    arrowIngredients.setAttribute('data', 'assets/icons/arrowUp.svg')
 
 
 }
@@ -25,7 +24,7 @@ function closeFilterIngredients() {
     saisieFiltreIngredients.setAttribute('class', 'saisieFiltre')
     saisieFiltreIngredients.setAttribute('placeholder', 'Ingrédients')
     tagSuggestionsIngredients.style.display = 'none'
-    arrow.setAttribute('data', 'assets/icons/arrowDown.svg')
+    arrowIngredients.setAttribute('data', 'assets/icons/arrowDown.svg')
 }
 
 closeFilterIngredients()
@@ -38,7 +37,7 @@ saisieFiltreIngredients.addEventListener('blur',closeFilterIngredients)
 const filterAppareils = document.querySelector('#filterAppareils')
 const saisieFiltreAppareils = document.querySelector('#saisieFiltreAppareils')
 const tagSuggestionsAppareils =document.querySelector('#tagSuggestionsAppareils')
-arrow = document.querySelector('#filterAppareils object')
+const arrowAppareils = document.querySelector('#filterAppareils object')
 
 
 function openFilterAppareils() {
@@ -47,7 +46,7 @@ function openFilterAppareils() {
     saisieFiltreAppareils.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreAppareils.setAttribute('placeholder', 'Rechercher un appareil')
     tagSuggestionsAppareils.style.display = 'block'
-    arrow.setAttribute('data', 'assets/icons/arrowUp.svg')
+    arrowAppareils.setAttribute('data', 'assets/icons/arrowUp.svg')
 
 
 }
@@ -57,7 +56,7 @@ function closeFilterAppareils() {
     saisieFiltreAppareils.setAttribute('class', 'saisieFiltre')
     saisieFiltreAppareils.setAttribute('placeholder', 'Appareils')
     tagSuggestionsAppareils.style.display = 'none'
-    arrow.setAttribute('data', 'assets/icons/arrowDown.svg')
+    arrowAppareils.setAttribute('data', 'assets/icons/arrowDown.svg')
 }
 
 closeFilterAppareils()
@@ -70,7 +69,7 @@ saisieFiltreAppareils.addEventListener('blur',closeFilterAppareils)
 const filterUstensiles = document.querySelector('#filterUstensiles')
 const saisieFiltreUstensiles = document.querySelector('#saisieFiltreUstensiles')
 const tagSuggestionsUstensiles =document.querySelector('#tagSuggestionsUstensiles')
-arrow = document.querySelector('#filterUstensiles object')
+const arrowUstensiles = document.querySelector('#filterUstensiles object')
 
 
 function openFilterUstensiles() {
@@ -79,7 +78,7 @@ function openFilterUstensiles() {
     saisieFiltreUstensiles.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreUstensiles.setAttribute('placeholder', 'Rechercher un ustensile')
     tagSuggestionsUstensiles.style.display = 'block'
-    arrow.setAttribute('data', 'assets/icons/arrowUp.svg')
+    arrowUstensiles.setAttribute('data', 'assets/icons/arrowUp.svg')
 
 
 }
@@ -89,7 +88,7 @@ function closeFilterUstensiles() {
     saisieFiltreUstensiles.setAttribute('class', 'saisieFiltre')
     saisieFiltreUstensiles.setAttribute('placeholder', 'Ustensiles')
     tagSuggestionsUstensiles.style.display = 'none'
-    arrow.setAttribute('data', 'assets/icons/arrowDown.svg')
+    arrowUstensiles.setAttribute('data', 'assets/icons/arrowDown.svg')
 }
 
 closeFilterUstensiles()

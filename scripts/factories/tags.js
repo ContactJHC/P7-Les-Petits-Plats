@@ -27,9 +27,15 @@ function tagsCreation (string,typeTag) {
 }
 
 // input : chaîne de caractères issue d'un élément de
-//  [[ingrédients],[appareils], [ustensiles]]
-// output : le HTML d'une seule suggestion de filtre principal
-// à savoir, ingrédients, appreils ou ustensiles
-function filterSuggestionCreation (string,typeTag) {
-    
+// [[ingrédients],[appareils], [ustensiles]]
+// output : le HTML d'une seule suggestion <li> de filtre 
+// principal à savoir, ingrédients, appareils ou ustensiles
+function filterSuggestionCreation (string) {
+    // création des éléments HTML
+    liSuggestion = document.createElement('li')
+    // affectation des attributs
+    liSuggestion.setAttribute('class', 'col-4')
+    // renseignement des contenus
+    liSuggestion.textContent = string
+    return liSuggestion
 }
