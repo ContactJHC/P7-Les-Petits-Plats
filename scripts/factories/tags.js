@@ -25,3 +25,11 @@ function tagsCreation (string,typeTag) {
     divTag.appendChild(closeTag)
     return divTag
 }
+
+// input : chaîne de caractères issue d'un élément de
+//  [[ingrédients],[appareils], [ustensiles]]
+// output : le HTML d'une seule suggestion de filtre principal
+// à savoir, ingrédients, appreils ou ustensiles
+function filterSuggestionCreation (string,typeTag) {
+    
+}

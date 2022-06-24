@@ -141,10 +141,8 @@ header #logo {
 }
 
 #searchSection__filters .filter {
-    display: flex;
+    position: relative;
     margin-right: 2%;
-    justify-content: space-between;
-    align-items: center;
     height: 4rem;
     border-radius: 5px;
     color: white;
@@ -152,8 +150,82 @@ header #logo {
     font-size: 1rem;
 }
 
+#searchSection__filters .filter--onclick {
+    width: fit-content;
+}
+
+#searchSection__filters .filter--onclick ul{
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+
+}
+
+#searchSection__filters .filter .tagSuggestions {
+    height: fit-content;
+    background-color: #3282f7ff;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    margin-top: -5px;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    z-index: 6;
+    width: 100%;
+}
+
+#searchSection__filters .filter .tagSuggestions ul {
+    list-style: none;
+    padding-left: 15px;
+}
+
+#suppr {
+    display: none;
+
+}
+
+#remplace {
+    position: absolute;
+    top: 25%;
+    font-size: 0.9rem;
+    border: none;
+    background-color: #3282f7ff;
+    
+}
+
+#remplace {
+    width: 80%;
+}
+
+#remplace::placeholder {
+    color: white;
+    opacity: 1;
+    font-weight: bold;
+    width: 100%;
+}
+
+
+#searchSection__filters .filter .tagSuggestions ul li {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 0.7rem;
+    font-weight: lighter;
+}
+
+
 #searchSection__filters .filter object {
     height: 50%;
+    position: absolute;
+    right: 5%;
+    top: 25%;
+
+}
+
+#searchSection__filters .filter p {
+    position: absolute;
+    top: 25%;
+    font-size: 0.9rem;
 }
 
 #searchSection__filters > div:nth-child(1) {
@@ -166,11 +238,6 @@ header #logo {
 
 #searchSection__filters > div:nth-child(3) {
     background-color: #ed6454ff;
-}
-
-
-#searchSection__filters .filter p {
-    margin: auto;
 }
 
 .recipesSection__card__texteFictif {

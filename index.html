@@ -18,23 +18,42 @@
             <input type="text" placeholder="Rechercher une recette">
             <button><object data="assets/icons/magnifier.svg" type="image/svg+xml"></object></button>
             <div id="mainSuggestions"></div>
-        </div>
-        <div id="searchSection__selectedFilters" class="row">
-            <div class="oneSelectedFilter col-2">
-                <p>Coco</p>
-                <object data="assets/icons/closeIngredient.svg" type="image/svg+xml"></object>
-            </div>
-        </div>
+        </div>        
         <div id="searchSection__filters" class="row">
-            <div class="filter col-3">
-                <p>Ingrédients</p>
-                <object data="assets/icons/arrowDown.svg" type="image/svg+xml"></object>
+            <div id="filterIngredients" class="filter filter--onclick col-7">
+                <p id="suppr">Ingrédients</p>
+                <input id="remplace" type="text" placeholder="Rechercher un ingrédient">
+                <object data="assets/icons/arrowUp.svg" type="image/svg+xml"></object>
+                <div class="tagSuggestions">
+                    <ul class="row">
+                        <li class="col-4">Coco avec du beurre</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">Coco avec du beurre</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">Coco avec du beurre</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">Coco avec du beurre</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">CocoCoco avec du beurre</li>
+                        <li class="col-4">CocoCoco avec du beurre</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">CocoCoco avec du beurre</li>
+                        <li class="col-4">CocoCoco avec du beurre</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">CocoCoco avec du beurre</li>
+                        <li class="col-4">Coco</li>
+                        <li class="col-4">Coco</li>
+                       
+                    </ul>
+                </div>
             </div>
-            <div class="filter col-3">
+            <div id="filterAppareils" class="filter col-2">
                 <p>Appareils</p>
                 <object data="assets/icons/arrowDown.svg" type="image/svg+xml"></object>
             </div>
-            <div class="filter col-3">
+            <div id="filterUstensiles" class="filter col-2">
                 <p>Ustensiles</p>
                 <object data="assets/icons/arrowDown.svg" type="image/svg+xml"></object>
             </div>
@@ -45,6 +64,7 @@
 
     <!--  JavaScript -->
     <script src="data/recipes.js"></script>
+    <script src="scripts/utils/filters.js"></script>
     <script src="scripts/utils/update.js"></script>
     <script src="scripts/factories/tags.js"></script>
     <script src="scripts/factories/card.js"></script>
