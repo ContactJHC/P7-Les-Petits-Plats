@@ -1,3 +1,4 @@
+
 function mainBarResearch() {
     // création et remplissage des tableaux de référence des recettes -
     // les valeurs rentrées par l'utilisateur seront comparées aux valeurs de
@@ -45,8 +46,7 @@ function mainBarResearch() {
                     return true
                 }
             })
-            console.log(arrayIngredientsSuggestionsIndex);
-
+            
             arrayIngredientSuggestions.forEach(suggestion => {
                 listeSuggestions += `<div class = "oneMainSuggestion">${suggestion}</div>`
             })
@@ -59,6 +59,39 @@ function mainBarResearch() {
             mainSuggestions.innerHTML = listeSuggestions
         } else {
             mainSuggestions.innerHTML = ''
+        }
+    })
+}
+
+// algorithme de tri 
+
+// input : le tableau de recettes
+// output : un tableau de recettes correspondant à la recherche - sans doublon
+function triRecherchePrincipale(recettes) {
+    const saisie = document.querySelector('#searchSection__searchBar input')
+    saisie.addEventListener('keyup', ()=>{
+        let valeur = saisie.value.toLocaleLowerCase()
+        if (valeur.length > 2) {
+            let tableauApresTri = []
+            recettes.forEach(e => {
+                if (e.name.toLocaleLowerCase().includes(valeur)) {
+                    tableauApresTri.push(e)
+                }
+                e.ingredients.forEach(elem => {
+                    if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
+                        tableauApresTri.push(e)
+                    }
+                })
+                if (e.description.includes(valeur)) {
+                    tableauApresTri.push(e)
+                }
+                e.ustensils.forEach(eleme => {
+                    if (eleme.includes(valeur)) {
+                        tableauApresTri.push(e)
+                    }
+                })
+            })
+            return filtreDoublons(tableauApresTri)
         }
     })
 }
