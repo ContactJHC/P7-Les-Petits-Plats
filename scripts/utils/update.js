@@ -1,7 +1,7 @@
 // input : un tableau de valeurs avec doublons
 // output : le tableau sans doublons
 function filtreDoublons (tableauAvecDoublons) {
-    return new Set(tableauAvecDoublons)
+    return Array.from(new Set(tableauAvecDoublons))
 }
 
 // input : tableau de recettes

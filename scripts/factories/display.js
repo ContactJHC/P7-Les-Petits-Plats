@@ -27,11 +27,11 @@ function recipesDisplay(tableauRecettes) {
 // input : pas d'input
 // output : retire les éléments de <main>
 function recipesDelete() {
-    if (mainTag.hasChildNodes()) {
         const recipesSection = document.querySelector('main section')
-        mainTag.removeChild(recipesSection)
+        if (recipesSection) {
+            document.querySelector('main').removeChild(recipesSection) 
+        }
     }
-}
 
 // input : un tableau de tableaux de tags d'ingrédients- indice 0, 
 // d'appareils- indice 1, d'ustensiles- indice 2

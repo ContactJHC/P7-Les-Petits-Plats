@@ -67,23 +67,22 @@ function mainBarResearch() {
 
 // input : le tableau de recettes
 // output : un tableau de recettes correspondant à la recherche - sans doublon
-function triRecherchePrincipale(recettes) {
+function triRecherchePrincipale(recipes) {
     const saisie = document.querySelector('#searchSection__searchBar input')
-    saisie.addEventListener('keyup', ()=>{
-        let valeur = saisie.value.toLocaleLowerCase()
+    let valeur = saisie.value.toLocaleLowerCase()
+    let tableauApresTri = []
         if (valeur.length > 2) {
-            let tableauApresTri = []
-            recettes.forEach(e => {
+            recipes.forEach(e => {
                 if (e.name.toLocaleLowerCase().includes(valeur)) {
                     tableauApresTri.push(e)
-                }
+                }  
                 e.ingredients.forEach(elem => {
                     if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
                         tableauApresTri.push(e)
                     }
                 })
                 if (e.description.includes(valeur)) {
-                    tableauApresTri.push(e)
+                    tableauApresTri.push(e) 
                 }
                 e.ustensils.forEach(eleme => {
                     if (eleme.includes(valeur)) {
@@ -91,7 +90,55 @@ function triRecherchePrincipale(recettes) {
                     }
                 })
             })
-            return filtreDoublons(tableauApresTri)
+            console.log(filtreDoublons(tableauApresTri));
         }
-    })
+    return filtreDoublons(tableauApresTri)
 }
+
+// 118 à 161
+// fonction sans doublons donc sans tri de doublons mais problème avec ustensiles
+
+// function triRecherchePrincipale(recipes) {
+//     const saisie = document.querySelector('#searchSection__searchBar input')
+//     let valeur = saisie.value.toLocaleLowerCase()
+//     let tableauApresTri = []
+//         if (valeur.length > 2) {
+//             recipes.forEach(e => {
+//                 let bool = false
+//                 if (e.name.toLocaleLowerCase().includes(valeur)) {
+//                     tableauApresTri.push(e)
+//                     bool = true
+//                 }  
+//                 if (bool == false) {
+//                     let boole = false
+//                     e.ingredients.forEach(elem => {
+//                         if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
+//                             boole = true
+//                         }
+//                     })
+//                     if (boole == true) {
+//                         tableauApresTri.push(e)
+//                         bool = true
+//                     }
+//                 }
+//                 if (bool == false && e.description.includes(valeur)) {
+//                     tableauApresTri.push(e)
+//                     bool = true 
+//                 }
+
+//                 if (bool = false) {
+//                     let booleen = false
+//                     e.ustensils.forEach(eleme => {
+//                         if (eleme.includes(valeur)) {
+//                             booleen = true
+//                         }
+//                     })
+//                     if (booleen == true) {
+//                         tableauApresTri.push(e)
+//                     }
+//                 }
+//             })
+//             console.log(filtreDoublons(tableauApresTri));
+//         }
+//     return tableauApresTri
+// }

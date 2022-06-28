@@ -1,5 +1,5 @@
 // affichage des suggestions lors de la saisie dans la barre principale
-mainBarResearch()
+// mainBarResearch()
 
 // affichage de l'ensemble des recettes
 recipesDisplay(recipes)
@@ -11,4 +11,29 @@ const test = recipes
 let tes = updateTags(test)
 suggestionsDisplay(tes)
 
-triRecherchePrincipale(recipes)
+
+triRecherchePrincipale(test)
+
+// document.querySelector('#searchSection__searchBar input').addEventListener(
+//     'keyup', () => {
+//         let result = triRecherchePrincipale(recipes)
+//         console.log(result);
+//         recipesDelete()
+//         recipesDisplay(result)
+//         suggestionsDelete()
+//         suggestionsDisplay(updateTags(result))
+//     }
+// )
+
+
+const saisie = document.querySelector('#searchSection__searchBar input')
+saisie.addEventListener('keyup', ()=>{
+    let valeur = saisie.value.toLocaleLowerCase()
+    if (valeur.length > 2) {
+        let result = triRecherchePrincipale(recipes)
+        console.log(result);
+        recipesDelete()
+        recipesDisplay(result)
+        suggestionsDelete()
+        suggestionsDisplay(updateTags(result))
+    }})
