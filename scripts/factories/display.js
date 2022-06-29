@@ -58,15 +58,13 @@ function tagsDisplay(tableauDeTableaux) {
     sectionSearch.insertBefore(divFiltersRow, divChoice)
 }
 
-// déclaration des éléments communs aux fonctions suggestionsDisplay et suggestionsDelete
-const divIngredients = document.querySelector('#filterIngredients')
-const divAppareils = document.querySelector('#filterAppareils')
-const divUstensiles = document.querySelector('#filterUstensiles')
-const divListeIngredients = document.querySelector('#tagSuggestionsIngredients')
-const divListeAppareils = document.querySelector('#tagSuggestionsAppareils')
-const divListeUstensiles = document.querySelector('#tagSuggestionsUstensiles')
-
 function suggestionsDisplay(tableauDeTableaux) {
+    const divIngredients = document.querySelector('#filterIngredients')
+    const divAppareils = document.querySelector('#filterAppareils')
+    const divUstensiles = document.querySelector('#filterUstensiles')
+    const divListeIngredients = document.querySelector('#tagSuggestionsIngredients')
+    const divListeAppareils = document.querySelector('#tagSuggestionsAppareils')
+    const divListeUstensiles = document.querySelector('#tagSuggestionsUstensiles')
     // création des éléments
     const ulIngredients = document.createElement('ul')
     const ulAppareils = document.createElement('ul')
@@ -79,8 +77,11 @@ function suggestionsDisplay(tableauDeTableaux) {
     // divListeAppareils.setAttribute('class', 'tagSuggestions')
     // divListeUstensiles.setAttribute('class', 'tagSuggestions')
     ulIngredients.setAttribute('class', 'row')
+    ulIngredients.setAttribute('id', 'ulIngredient')
     ulAppareils.setAttribute('class', 'row')
+    ulAppareils.setAttribute('id', 'ulAppareils')
     ulUstensiles.setAttribute('class', 'row')
+    ulUstensiles.setAttribute('id', 'ulUstensiles')
     // renseignement des contenus
     tableauDeTableaux[0].forEach(e =>
         ulIngredients.appendChild(filterSuggestionCreation(e))
@@ -101,10 +102,16 @@ function suggestionsDisplay(tableauDeTableaux) {
 }
 
 function suggestionsDelete() {
-    if (divIngredients.hasChildNodes()) {
-        divIngredients.removeChild(divListeIngredients)
-        divAppareils.removeChild(divListeAppareils)
-        divUstensiles.removeChild(divListeUstensiles)
+    const divListeIngredients = document.querySelector('#tagSuggestionsIngredients')
+    const divListeAppareils = document.querySelector('#tagSuggestionsAppareils')
+    const divListeUstensiles = document.querySelector('#tagSuggestionsUstensiles')
+    if (document.querySelector('#ulIngredient')) {
+        const ulIngredient = document.querySelector('#ulIngredient')
+        const ulAppareils = document.querySelector('#ulAppareils')
+        const ulUstensiles = document.querySelector('#ulUstensiles')
+        divListeIngredients.removeChild(ulIngredient)
+        divListeAppareils.removeChild(ulAppareils)
+        divListeUstensiles.removeChild(ulUstensiles)
     }
 }
 
