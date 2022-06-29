@@ -36,4 +36,12 @@ saisie.addEventListener('keyup', ()=>{
         recipesDisplay(result)
         suggestionsDelete()
         suggestionsDisplay(updateTags(result))
-    }})
+    } else {
+        recipesDelete()
+        recipesDisplay(recipes)
+        suggestionsDelete()
+        suggestionsDisplay(updateTags(recipes))
+    }
+
+// fin du keyup
+})
