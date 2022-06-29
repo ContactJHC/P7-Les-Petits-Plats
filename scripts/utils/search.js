@@ -63,9 +63,10 @@ function mainBarResearch() {
     })
 }
 
-// algorithme de tri 
+// algorithmes de tri 
 let recettesMAJ = []
 
+// tri à partir de la recherche principale
 // input : le tableau de recettes
 // output : un tableau de recettes correspondant à la recherche - sans doublon
 function triRecherchePrincipale(recipes) {
@@ -93,11 +94,43 @@ function triRecherchePrincipale(recipes) {
             })
         }
         recettesMAJ = [].concat(tableauApresTri)
-        console.log(recettesMAJ)
     return filtreDoublons(tableauApresTri)
 }
 
-// 118 à 161
+// tri à partir des ingrédients
+// input : str qui est le li.textContent d'une seule suggestion
+// str qui est la catégorie du filtre
+// output : arr la liste de recette 'recettesMAJ' mise à jour avec
+// les éléments répondant au critère du filtre
+function triFiltres(textContentUneLi, categorieFiltre, recettesMAJ) {
+    let tableauApresTri = []
+    if (categorieFiltre == 'ingredients') {
+        recettesMAJ.forEach((e, ind) => {
+            e.ingredients.forEach((elem,i) => {
+                if (elem.ingredient.toLocaleLowerCase().includes(textContentUneLi)) {
+                    tableauApresTri.push(e)
+                }
+            })
+        })
+    } else if (categorieFiltre == 'appareils') {
+        recettesMAJ.forEach((e) => {
+            if (e.appliance.toLocaleLowerCase().includes(textContentUneLi)) {
+                tableauApresTri.push(e) 
+            }
+        })
+    } else if (categorieFiltre == 'ustensiles') {
+        recettesMAJ.forEach((e) => {
+            e.ustensils.forEach(eleme => {
+                if (eleme.toLocaleLowerCase().includes(textContentUneLi)) {
+                    tableauApresTri.push(e)
+                }
+            })
+        })
+    } 
+    recettesMAJ = [].concat(tableauApresTri)
+    return recettesMAJ
+}
+
 // fonction sans doublons donc sans tri de doublons mais problème avec ustensiles
 
 // function triRecherchePrincipale(recipes) {
