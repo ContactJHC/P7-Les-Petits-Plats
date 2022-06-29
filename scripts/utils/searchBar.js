@@ -64,6 +64,7 @@ function mainBarResearch() {
 }
 
 // algorithme de tri 
+let recettesMAJ = []
 
 // input : le tableau de recettes
 // output : un tableau de recettes correspondant à la recherche - sans doublon
@@ -90,8 +91,9 @@ function triRecherchePrincipale(recipes) {
                     }
                 })
             })
-            console.log(filtreDoublons(tableauApresTri));
         }
+        recettesMAJ = [].concat(tableauApresTri)
+        console.log(recettesMAJ)
     return filtreDoublons(tableauApresTri)
 }
 
