@@ -2,6 +2,9 @@
 //  [[ingrédients],[appareils], [ustensiles]]
 // output : le HTML d'un seul filtre/tag
 
+function tagDelete(divTag) {
+}
+
 function tagsCreation (string,typeTag) {
     // création des éléments HTML
     const divTag = document.createElement('div')
@@ -13,6 +16,14 @@ function tagsCreation (string,typeTag) {
     closeTag.setAttribute('id', `closeID${string}`)
     closeTag.setAttribute('data', 'assets/icons/closeIngredient.svg')
     closeTag.setAttribute('type', 'image/svg+xml')
+    closeTag.style.pointerEvents = 'all'
+    // closeTag.addEventListener('mouseover', ()=>{console.log('ouiouioui');})
+    closeTag.addEventListener('mouseover', () => {
+        const divFiltersRow = document.querySelector('#searchSection__selectedFilters')
+        if (divFiltersRow) {
+        console.log('divRow OK');
+        divFiltersRow.removeChild(divTag)} else {console.log('pas de divRow');}
+    })
     // affectation des attributs liés aux couleurs, le bleu de ingrédient
     // étant la couleur par défaut
     if (typeTag == 'tagAppareils') {
@@ -28,7 +39,7 @@ function tagsCreation (string,typeTag) {
     return divTag
 }
 
-tagsCreation('coco', 'ustensiles')
+
 
 // input : chaîne de caractères issue d'un élément de
 // [[ingrédients],[appareils], [ustensiles]]
