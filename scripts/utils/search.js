@@ -100,6 +100,7 @@ function triRecherchePrincipale(recipes) {
 // tri à partir des ingrédients
 // input : str qui est le li.textContent d'une seule suggestion
 // str qui est la catégorie du filtre
+// arr qui est la liste de recettes à l'avancement précédant la fonction
 // output : arr la liste de recette 'recettesMAJ' mise à jour avec
 // les éléments répondant au critère du filtre
 function triFiltres(textContentUneLi, categorieFiltre, recettesMAJ) {
@@ -130,6 +131,37 @@ function triFiltres(textContentUneLi, categorieFiltre, recettesMAJ) {
     recettesMAJ = [].concat(tableauApresTri)
     return recettesMAJ
 }
+
+function triApresSuppressionTag(recettes, cible) {
+    let tableauApresTri = []
+    recettes.forEach(e => {
+        if (e.name.toLocaleLowerCase().includes(cible)) {
+            tableauApresTri.push(e)
+        }  
+        e.ingredients.forEach(elem => {
+            if (elem.ingredient.toLocaleLowerCase().includes(cible)) {
+                tableauApresTri.push(e)
+            }
+        })
+
+        if (e.appliance.toLocaleLowerCase().includes(cible)) {
+            tableauApresTri.push(e)
+        }  
+        // if (e.description.toLocaleLowerCase().includes(cible)) {
+        //     tableauApresTri.push(e) 
+        // }
+        e.ustensils.forEach(eleme => {
+            if (eleme.toLocaleLowerCase().includes(cible)) {
+                tableauApresTri.push(e)
+            }
+        })
+    })
+    recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
+    console.log('algo tri apres suppression donne :', recettesMAJ);
+    return recettesMAJ
+}
+
+triApresSuppressionTag(recipes, 'lait de coco')
 
 // fonction sans doublons donc sans tri de doublons mais problème avec ustensiles
 

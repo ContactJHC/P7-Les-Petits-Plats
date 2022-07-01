@@ -2,9 +2,6 @@
 //  [[ingrédients],[appareils], [ustensiles]]
 // output : le HTML d'un seul filtre/tag
 
-function tagDelete(divTag) {
-}
-
 function tagsCreation (string,typeTag) {
     // création des éléments HTML
     const divTag = document.createElement('div')
@@ -13,16 +10,36 @@ function tagsCreation (string,typeTag) {
     // affectation des attributs hors couleurs
     divTag.setAttribute('id', `divID${string}`)
     divTag.setAttribute('class', 'oneSelectedFilter col-2')
+    pTag.setAttribute('class', 'listeDeTags')
     closeTag.setAttribute('id', `closeID${string}`)
     closeTag.setAttribute('data', 'assets/icons/closeIngredient.svg')
     closeTag.setAttribute('type', 'image/svg+xml')
     closeTag.style.pointerEvents = 'all'
-    // closeTag.addEventListener('mouseover', ()=>{console.log('ouiouioui');})
+    // closeTag.addEventListener('mouseover', ()=>{console.log('mouseover effectif');})
     closeTag.addEventListener('mouseover', () => {
         const divFiltersRow = document.querySelector('#searchSection__selectedFilters')
         if (divFiltersRow) {
-        console.log('divRow OK');
-        divFiltersRow.removeChild(divTag)} else {console.log('pas de divRow');}
+            divFiltersRow.removeChild(divTag)
+            listeDeTagsATester = document.querySelectorAll('.listeDeTags')
+            console.log('la liste de li', listeDeTagsATester);
+            console.log('recetteMAJ avant concat', recettesMAJ);
+            recettesMAJ = [].concat(recipes)
+            console.log('recetteMAJ apres concat', recettesMAJ);
+            recipesDelete()
+            recipesDisplay(recettesMAJ)
+            suggestionsDelete()
+            suggestionsDisplay(updateFiltres(recettesMAJ))
+            listeDeTagsATester.forEach( (e,i) => {
+                console.log('e.innerText :', e.innerText)
+                recettesMAJ = triApresSuppressionTag(recettesMAJ, e.innerText) 
+                console.log('recetteMAJ apres boucle', i, recettesMAJ);
+                recipesDelete()
+                recipesDisplay(recettesMAJ)
+                suggestionsDelete()
+                suggestionsDisplay(updateFiltres(recettesMAJ))
+            })
+        } else {
+            console.log('pas de divRow');}
     })
     // affectation des attributs liés aux couleurs, le bleu de ingrédient
     // étant la couleur par défaut
@@ -59,8 +76,6 @@ function filterSuggestionCreation (string, typeTag) {
         recipesDisplay(recettesMAJ)
         suggestionsDelete()
         suggestionsDisplay(updateFiltres(recettesMAJ))
-        console.log(recettesMAJ);
-        console.log('click fonctionne');
     })
     return liSuggestion
 }
