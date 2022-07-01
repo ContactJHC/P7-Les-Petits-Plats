@@ -29,8 +29,8 @@ function closeFilterIngredients() {
 
 closeFilterIngredients()
 
-saisieFiltreIngredients.addEventListener('focus',openFilterIngredients)
-saisieFiltreIngredients.addEventListener('blur',closeFilterIngredients)
+filterIngredients.addEventListener('click',openFilterIngredients)
+filterIngredients.addEventListener('mouseleave',closeFilterIngredients)
 
 // Appareils
 
@@ -61,8 +61,8 @@ function closeFilterAppareils() {
 
 closeFilterAppareils()
 
-saisieFiltreAppareils.addEventListener('focus',openFilterAppareils)
-saisieFiltreAppareils.addEventListener('blur',closeFilterAppareils)
+filterAppareils.addEventListener('click',openFilterAppareils)
+filterAppareils.addEventListener('mouseleave',closeFilterAppareils)
 
 // Ustensiles
 
@@ -93,5 +93,14 @@ function closeFilterUstensiles() {
 
 closeFilterUstensiles()
 
-saisieFiltreUstensiles.addEventListener('focus',openFilterUstensiles)
-saisieFiltreUstensiles.addEventListener('blur',closeFilterUstensiles)
+filterUstensiles.addEventListener('click',openFilterUstensiles)
+filterUstensiles.addEventListener('mouseleave',closeFilterUstensiles)
+
+// input : pas d'input
+// output : affecte à chaque suggestion présente dans les filtres 
+// un nom du DOM + affecte les écoutes d'événements 'afficher le tag 
+// associé au filtre sélectionné' et 'retirer le tag dont l'on a 
+// appuyé sur la croix de fermeture'
+
+// function filtresAffectations() {
+// }

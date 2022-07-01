@@ -22,7 +22,8 @@ triRecherchePrincipale(test)
 // initialisation de la page : affichage des recettes et des tags
 recettesMAJ = [].concat(recipes) 
 recipesDisplay(recettesMAJ)
-suggestionsDisplay(updateTags(recettesMAJ))
+let pretraitement = updateFiltres(recettesMAJ)
+suggestionsDisplay(pretraitement)
 
 // recherche depuis la barre principale
 const saisie = document.querySelector('#searchSection__searchBar input')
@@ -34,7 +35,7 @@ saisie.addEventListener('keyup', ()=>{
         recipesDelete()
         recipesDisplay(result)
         suggestionsDelete()
-        suggestionsDisplay(updateTags(result))
+        suggestionsDisplay(updateFiltres(result))
 console.log(result);
 
     } else {
@@ -43,9 +44,18 @@ console.log(result);
         recipesDelete()
         recipesDisplay(recettesMAJ)
         suggestionsDelete()
-        suggestionsDisplay(updateTags(recettesMAJ))
+        suggestionsDisplay(updateFiltres(recettesMAJ))
 
     }
 
 // fin du keyup
 })
+
+// recherche depuis les filtres
+
+// const sectionFilters = document.querySelector('#searchSection__filters')
+// sectionFilters.addEventListener('click', () => {
+//     // affectation du DOM sur l'ensemble des éléments présents dans les
+//     // filtres et des écoutes d'événements qui leurs sont propres
+//     filtresAffectations()
+// })

@@ -7,7 +7,7 @@ function filtreDoublons (tableauAvecDoublons) {
 // input : tableau de recettes
 // output : un tableau de tableaux de tags d'ingrédients, 
 // d'appareils, d'ustensiles
-function updateTags (listeRecettes) {
+function updateFiltres (listeRecettes) {
     let tagsIngredients = []
     let tagsAppareils = []
     let tagsUstensiles = []

@@ -33,29 +33,15 @@ function recipesDelete() {
         }
     }
 
-// input : un tableau de tableaux de tags d'ingrédients- indice 0, 
-// d'appareils- indice 1, d'ustensiles- indice 2
-// output : affiche les tags associés
-function tagsDisplay(tableauDeTableaux) {
+// input : le HTML d'un seul filtre/tag
+// output : affiche le tag sur la page 
+function tagsDisplay(divTag) {
     // création des éléments DOM et HTML
     const divChoice = document.querySelector('#searchSection__filters')
     const sectionSearch = document.querySelector('#searchSection')
-    const divFiltersRow = document.createElement('div')
-    // affectation des attributs 
-    divFiltersRow.setAttribute('id', 'searchSection__selectedFilters')
-    divFiltersRow.setAttribute('class', 'row')
+    const divFiltersRow = document.querySelector('#searchSection__selectedFilters')
     // renseignement des contenus 
-    tableauDeTableaux[0].forEach(e =>
-        divFiltersRow.appendChild(tagsCreation(e,'tagIngredient'))
-        )
-    tableauDeTableaux[1].forEach(e =>
-        divFiltersRow.appendChild(tagsCreation(e,'tagAppareils'))
-        )
-    tableauDeTableaux[2].forEach(e =>
-        divFiltersRow.appendChild(tagsCreation(e,'tagUstensiles'))
-        )
-    // imbrication des éléments
-    sectionSearch.insertBefore(divFiltersRow, divChoice)
+    divFiltersRow.appendChild(divTag)
 }
 
 function suggestionsDisplay(tableauDeTableaux) {
@@ -84,13 +70,13 @@ function suggestionsDisplay(tableauDeTableaux) {
     ulUstensiles.setAttribute('id', 'ulUstensiles')
     // renseignement des contenus
     tableauDeTableaux[0].forEach(e =>
-        ulIngredients.appendChild(filterSuggestionCreation(e))
+        ulIngredients.appendChild(filterSuggestionCreation(e, 'tagIngredients'))
         )
     tableauDeTableaux[1].forEach(e =>
-        ulAppareils.appendChild(filterSuggestionCreation(e))
+        ulAppareils.appendChild(filterSuggestionCreation(e, 'tagAppareils'))
         )
     tableauDeTableaux[2].forEach(e =>
-        ulUstensiles.appendChild(filterSuggestionCreation(e))
+        ulUstensiles.appendChild(filterSuggestionCreation(e, 'tagUstensiles'))
         )
     // imbrication des éléments
     divIngredients.appendChild(divListeIngredients)
