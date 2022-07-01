@@ -52,11 +52,14 @@ function filterSuggestionCreation (string, typeTag) {
     liSuggestion.setAttribute('class', 'col-4')
     // renseignement des contenus
     liSuggestion.textContent = string
-    liSuggestion.addEventListener('mouseover', () => {
-        console.log('mouseover fonctionne');
-    })
     liSuggestion.addEventListener('click', () => {
         tagsDisplay(tagsCreation(string, typeTag))
+        recettesMAJ = triFiltres(string, typeTag, recettesMAJ)
+        recipesDelete()
+        recipesDisplay(recettesMAJ)
+        suggestionsDelete()
+        suggestionsDisplay(updateFiltres(recettesMAJ))
+        console.log(recettesMAJ);
         console.log('click fonctionne');
     })
     return liSuggestion

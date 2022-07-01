@@ -104,7 +104,7 @@ function triRecherchePrincipale(recipes) {
 // les éléments répondant au critère du filtre
 function triFiltres(textContentUneLi, categorieFiltre, recettesMAJ) {
     let tableauApresTri = []
-    if (categorieFiltre == 'ingredients') {
+    if (categorieFiltre == 'tagIngredients') {
         recettesMAJ.forEach((e, ind) => {
             e.ingredients.forEach((elem,i) => {
                 if (elem.ingredient.toLocaleLowerCase().includes(textContentUneLi)) {
@@ -112,13 +112,13 @@ function triFiltres(textContentUneLi, categorieFiltre, recettesMAJ) {
                 }
             })
         })
-    } else if (categorieFiltre == 'appareils') {
+    } else if (categorieFiltre == 'tagAppareils') {
         recettesMAJ.forEach((e) => {
             if (e.appliance.toLocaleLowerCase().includes(textContentUneLi)) {
                 tableauApresTri.push(e) 
             }
         })
-    } else if (categorieFiltre == 'ustensiles') {
+    } else if (categorieFiltre == 'tagUstensiles') {
         recettesMAJ.forEach((e) => {
             e.ustensils.forEach(eleme => {
                 if (eleme.toLocaleLowerCase().includes(textContentUneLi)) {
