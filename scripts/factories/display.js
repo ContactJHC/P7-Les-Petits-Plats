@@ -37,8 +37,6 @@ function recipesDelete() {
 // output : affiche le tag sur la page 
 function tagsDisplay(divTag) {
     // création des éléments DOM et HTML
-    const divChoice = document.querySelector('#searchSection__filters')
-    const sectionSearch = document.querySelector('#searchSection')
     const divFiltersRow = document.querySelector('#searchSection__selectedFilters')
     // renseignement des contenus 
     divFiltersRow.appendChild(divTag)
@@ -101,6 +99,56 @@ function suggestionsDelete() {
     }
 }
 
-
+function displaySuggestionIngredients(tableauAffichage) {
+    const divIngredients = document.querySelector('#filterIngredients')
+    // const divAppareils = document.querySelector('#filterAppareils')
+    // const divUstensiles = document.querySelector('#filterUstensiles')
+    const divListeIngredients = document.querySelector('#tagSuggestionsIngredients')
+    // const divListeAppareils = document.querySelector('#tagSuggestionsAppareils')
+    // const divListeUstensiles = document.querySelector('#tagSuggestionsUstensiles')
+    // // création des éléments
+    const ulIngredientsAncien = document.querySelector('#ulIngredient')
+    // //retrait de ce qui est affiché
+    divListeIngredients.removeChild(ulIngredientsAncien)
+    // const ulAppareils = document.createElement('ul')
+    // const ulUstensiles = document.createElement('ul')
+    //  //affectation des attributs
+    // divListeIngredients.setAttribute('id', 'tagSuggestionsIngredients')
+    // divListeAppareils.setAttribute('id', 'tagSuggestionsAppareils')
+    // divListeUstensiles.setAttribute('id', 'tagSuggestionsUstensiles')
+    // divListeIngredients.setAttribute('class', 'tagSuggestions')
+    // divListeAppareils.setAttribute('class', 'tagSuggestions')
+    // divListeUstensiles.setAttribute('class', 'tagSuggestions')
+    //  //ajout des nouvelles informations
+    const ulIngredients = document.createElement('div')
+    ulIngredients.setAttribute('class', 'row')
+    ulIngredients.setAttribute('id', 'ulIngredient')
+    ulIngredients.setAttribute('style',
+        'list-style:none;padding-left:15px;white-space:nowrap;')
+    // ulAppareils.setAttribute('class', 'row')
+    // ulAppareils.setAttribute('id', 'ulAppareils')
+    // ulUstensiles.setAttribute('class', 'row')
+    // ulUstensiles.setAttribute('id', 'ulUstensiles')
+    //  //renseignement des contenus
+    tableauAffichage.forEach(e => {
+        const liAffichage = filterSuggestionCreation(e, 'tagIngredients')
+        liAffichage.setAttribute('style',
+            'overflow:hidden;text-overflow: ellipsis;font-size: 0.7rem;font-weight: lighter;')
+        ulIngredients.appendChild(liAffichage)
+    })
+    // tableauDeTableaux[1].forEach(e =>
+    //     ulAppareils.appendChild(filterSuggestionCreation(e, 'tagAppareils'))
+    //     )
+    // tableauDeTableaux[2].forEach(e =>
+    //     ulUstensiles.appendChild(filterSuggestionCreation(e, 'tagUstensiles'))
+    //     )
+    //  //imbrication des éléments
+    divIngredients.appendChild(divListeIngredients)
+    // divAppareils.appendChild(divListeAppareils)
+    // divUstensiles.appendChild(divListeUstensiles)
+    divListeIngredients.appendChild(ulIngredients)
+    // divListeAppareils.appendChild(ulAppareils)
+    // divListeUstensiles.appendChild(ulUstensiles)
+}
 
 

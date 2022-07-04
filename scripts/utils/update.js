@@ -25,3 +25,12 @@ function updateFiltres (listeRecettes) {
     ]
 }
 
+// input : liste de recette selon laquelle actualiser les contenus
+// output : actualisation de l'affichage des recettes et des suggestions
+
+function refresh(recettesMAJ) {
+    recipesDelete()
+    recipesDisplay(recettesMAJ)
+    suggestionsDelete()
+    suggestionsDisplay(updateFiltres(recettesMAJ))
+}

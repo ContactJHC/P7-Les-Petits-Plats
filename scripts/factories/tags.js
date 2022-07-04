@@ -1,6 +1,6 @@
 // input : chaîne de caractères issue d'un élément de
 //  [[ingrédients],[appareils], [ustensiles]]
-// output : le HTML d'un seul filtre/tag
+// output : le HTML d'un seul tag
 
 function tagsCreation (string,typeTag) {
     // création des éléments HTML
@@ -25,18 +25,12 @@ function tagsCreation (string,typeTag) {
             console.log('recetteMAJ avant concat', recettesMAJ);
             recettesMAJ = [].concat(recipes)
             console.log('recetteMAJ apres concat', recettesMAJ);
-            recipesDelete()
-            recipesDisplay(recettesMAJ)
-            suggestionsDelete()
-            suggestionsDisplay(updateFiltres(recettesMAJ))
+            refresh(recettesMAJ)
             listeDeTagsATester.forEach( (e,i) => {
                 console.log('e.innerText :', e.innerText)
                 recettesMAJ = triApresSuppressionTag(recettesMAJ, e.innerText) 
                 console.log('recetteMAJ apres boucle', i, recettesMAJ);
-                recipesDelete()
-                recipesDisplay(recettesMAJ)
-                suggestionsDelete()
-                suggestionsDisplay(updateFiltres(recettesMAJ))
+                refresh(recettesMAJ)
             })
         } else {
             console.log('pas de divRow');}
@@ -59,7 +53,7 @@ function tagsCreation (string,typeTag) {
 
 
 // input : chaîne de caractères issue d'un élément de
-// [[ingrédients],[appareils], [ustensiles]]
+// update.js : [[ingrédients],[appareils], [ustensiles]]
 // output : le HTML d'une seule suggestion <li> de filtre 
 // principal à savoir, ingrédients, appareils ou ustensiles
 function filterSuggestionCreation (string, typeTag) {
@@ -72,10 +66,7 @@ function filterSuggestionCreation (string, typeTag) {
     liSuggestion.addEventListener('click', () => {
         tagsDisplay(tagsCreation(string, typeTag))
         recettesMAJ = triFiltres(string, typeTag, recettesMAJ)
-        recipesDelete()
-        recipesDisplay(recettesMAJ)
-        suggestionsDelete()
-        suggestionsDisplay(updateFiltres(recettesMAJ))
+        refresh(recettesMAJ)
     })
     return liSuggestion
 }

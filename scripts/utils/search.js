@@ -131,7 +131,8 @@ function triFiltres(textContentUneLi, categorieFiltre, recettesMAJ) {
     recettesMAJ = [].concat(tableauApresTri)
     return recettesMAJ
 }
-
+// input : arr de recettes et str à rechercher dans les recettes
+// output : arr de recettes MAJ en correspondance avec le str à rechercher
 function triApresSuppressionTag(recettes, cible) {
     let tableauApresTri = []
     recettes.forEach(e => {
@@ -147,6 +148,10 @@ function triApresSuppressionTag(recettes, cible) {
         if (e.appliance.toLocaleLowerCase().includes(cible)) {
             tableauApresTri.push(e)
         }  
+
+        // instruction ci-dessous donne de plus amples résultats
+        // que le tri sur les filtres : flou au niveau des consignes des cas 
+        // d'utilisation, à conserver pour éventuelle MAJ post-soutenance
         // if (e.description.toLocaleLowerCase().includes(cible)) {
         //     tableauApresTri.push(e) 
         // }
@@ -161,7 +166,52 @@ function triApresSuppressionTag(recettes, cible) {
     return recettesMAJ
 }
 
-triApresSuppressionTag(recipes, 'lait de coco')
+// input : arr de recettes et str à rechercher dans les ingrédients
+// output : arr de recettes MAJ en correspondance avec le str à rechercher
+function triTagIngredients(recettes, cible) {
+    let tableauApresTri = []
+    let tableauAffichageSeulementAvecDoublons = []
+    recettes.forEach(e => {
+        e.ingredients.forEach(elem => {
+            if (elem.ingredient.toLocaleLowerCase().includes(cible)) {
+                tableauApresTri.push(e)
+                tableauAffichageSeulementAvecDoublons.push(elem.ingredient)
+            }
+        })
+    })
+    let tableauAffichageSeulement = filtreDoublons(tableauAffichageSeulementAvecDoublons)
+    recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
+    console.log('algo tri affichage apres triTagIngredient donne :', tableauAffichageSeulement);
+    return tableauAffichageSeulement
+}
+
+// input : arr de recettes et str à rechercher dans les appareils
+// output : arr de recettes MAJ en correspondance avec le str à rechercher
+function triTagAppareils(recettes, cible) {
+    let tableauApresTri = []
+    recettes.forEach(e => {
+        if (e.appliance.toLocaleLowerCase().includes(cible)) {
+            tableauApresTri.push(e)
+        }  
+    })
+    recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
+    console.log('algo tri apres triTagAppareils donne :', recettesMAJ);
+    return recettesMAJ
+}
+
+function triTagUstensiles(recettes, cible) {
+    let tableauApresTri = []
+    recettes.forEach(e => {
+        e.ustensils.forEach(eleme => {
+            if (eleme.toLocaleLowerCase().includes(cible)) {
+                tableauApresTri.push(e)
+            }
+        })
+    })
+    recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
+    console.log('algo tri apres triTagUstensiles donne :', recettesMAJ);
+    return recettesMAJ
+}
 
 // fonction sans doublons donc sans tri de doublons mais problème avec ustensiles
 

@@ -53,9 +53,46 @@ console.log(result);
 
 // recherche depuis les filtres
 
-// const sectionFilters = document.querySelector('#searchSection__filters')
-// sectionFilters.addEventListener('click', () => {
-//     // affectation du DOM sur l'ensemble des éléments présents dans les
-//     // filtres et des écoutes d'événements qui leurs sont propres
-//     filtresAffectations()
-// })
+const inputIngredients = document.querySelector('#saisieFiltreIngredients')
+const inputAppareils = document.querySelector('#saisieFiltreAppareils')
+const inputUstensiles = document.querySelector('#saisieFiltreUstensiles')
+
+let recettesMAJavantRecherche = [].concat(recettesMAJ)
+
+inputIngredients.addEventListener('keyup', () => {
+    console.log('écriture dans input ingrédients :', inputIngredients.value);
+    if (inputIngredients.value.length > 0) {
+        let tableauAffichage = triTagIngredients(
+            recettesMAJ,inputIngredients.value.toLocaleLowerCase())
+        refresh(recettesMAJ)
+        displaySuggestionIngredients(tableauAffichage)
+    } else {
+        refresh(recettesMAJavantRecherche)
+        recettesMAJ = [].concat(recettesMAJavantRecherche)
+    }
+    // fin du keyup ingrédients
+})
+
+inputAppareils.addEventListener('keyup', () => {
+    console.log('écriture dans input appareils :', inputAppareils.value);
+    if (inputAppareils.value.length > 0) {
+        triTagAppareils(recettesMAJ,inputAppareils.value.toLocaleLowerCase())
+        refresh(recettesMAJ)
+    } else {
+        refresh(recettesMAJavantRecherche)
+        recettesMAJ = [].concat(recettesMAJavantRecherche)
+    }
+// fin du keyup appareils
+})
+
+inputUstensiles.addEventListener('keyup', () => {
+    console.log('écriture dans input ustensiles :', inputUstensiles.value);
+    if (inputUstensiles.value.length > 0) {
+        triTagUstensiles(recettesMAJ,inputUstensiles.value.toLocaleLowerCase())
+        refresh(recettesMAJ)
+    } else {
+        refresh(recettesMAJavantRecherche)
+        recettesMAJ = [].concat(recettesMAJavantRecherche)
+    }
+    // fin du keyup ustensiles
+})
