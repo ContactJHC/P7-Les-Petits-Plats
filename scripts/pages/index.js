@@ -76,8 +76,10 @@ inputIngredients.addEventListener('keyup', () => {
 inputAppareils.addEventListener('keyup', () => {
     console.log('écriture dans input appareils :', inputAppareils.value);
     if (inputAppareils.value.length > 0) {
-        triTagAppareils(recettesMAJ,inputAppareils.value.toLocaleLowerCase())
+        let tableauAffichage = triTagAppareils(
+            recettesMAJ,inputAppareils.value.toLocaleLowerCase())
         refresh(recettesMAJ)
+        displaySuggestionAppareils(tableauAffichage)
     } else {
         refresh(recettesMAJavantRecherche)
         recettesMAJ = [].concat(recettesMAJavantRecherche)
@@ -88,8 +90,10 @@ inputAppareils.addEventListener('keyup', () => {
 inputUstensiles.addEventListener('keyup', () => {
     console.log('écriture dans input ustensiles :', inputUstensiles.value);
     if (inputUstensiles.value.length > 0) {
-        triTagUstensiles(recettesMAJ,inputUstensiles.value.toLocaleLowerCase())
+        let tableauAffichage = triTagUstensiles(
+            recettesMAJ,inputUstensiles.value.toLocaleLowerCase())
         refresh(recettesMAJ)
+        displaySuggestionUstensiles(tableauAffichage)
     } else {
         refresh(recettesMAJavantRecherche)
         recettesMAJ = [].concat(recettesMAJavantRecherche)

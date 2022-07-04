@@ -151,4 +151,106 @@ function displaySuggestionIngredients(tableauAffichage) {
     // divListeUstensiles.appendChild(ulUstensiles)
 }
 
+function displaySuggestionAppareils(tableauAffichage) {
+    // const divIngredients = document.querySelector('#filterIngredients')
+    const divAppareils = document.querySelector('#filterAppareils')
+    // const divUstensiles = document.querySelector('#filterUstensiles')
+    // const divListeIngredients = document.querySelector('#tagSuggestionsIngredients')
+    const divListeAppareils = document.querySelector('#tagSuggestionsAppareils')
+    // const divListeUstensiles = document.querySelector('#tagSuggestionsUstensiles')
+    // // création des éléments
+    const ulAppareilsAncien = document.querySelector('#ulAppareils')
+    // //retrait de ce qui est affiché
+    divListeAppareils.removeChild(ulAppareilsAncien)
+    // const ulAppareils = document.createElement('ul')
+    // const ulUstensiles = document.createElement('ul')
+    //  //affectation des attributs
+    // divListeIngredients.setAttribute('id', 'tagSuggestionsIngredients')
+    // divListeAppareils.setAttribute('id', 'tagSuggestionsAppareils')
+    // divListeUstensiles.setAttribute('id', 'tagSuggestionsUstensiles')
+    // divListeIngredients.setAttribute('class', 'tagSuggestions')
+    // divListeAppareils.setAttribute('class', 'tagSuggestions')
+    // divListeUstensiles.setAttribute('class', 'tagSuggestions')
+    //  //ajout des nouvelles informations
+    const ulAppareils = document.createElement('div')
+    ulAppareils.setAttribute('class', 'row')
+    ulAppareils.setAttribute('id', 'ulAppareils')
+    ulAppareils.setAttribute('style',
+        'list-style:none;padding-left:15px;white-space:nowrap;')
+    // ulAppareils.setAttribute('class', 'row')
+    // ulAppareils.setAttribute('id', 'ulAppareils')
+    // ulUstensiles.setAttribute('class', 'row')
+    // ulUstensiles.setAttribute('id', 'ulUstensiles')
+    //  //renseignement des contenus
+    tableauAffichage.forEach(e => {
+        const liAffichage = filterSuggestionCreation(e, 'tagAppareils')
+        liAffichage.setAttribute('style',
+            'overflow:hidden;text-overflow: ellipsis;font-size: 0.7rem;font-weight: lighter;')
+        ulAppareils.appendChild(liAffichage)
+    })
+    // tableauDeTableaux[1].forEach(e =>
+    //     ulAppareils.appendChild(filterSuggestionCreation(e, 'tagAppareils'))
+    //     )
+    // tableauDeTableaux[2].forEach(e =>
+    //     ulUstensiles.appendChild(filterSuggestionCreation(e, 'tagUstensiles'))
+    //     )
+    //  //imbrication des éléments
+    // divIngredients.appendChild(divListeIngredients)
+    divAppareils.appendChild(divListeAppareils)
+    // divUstensiles.appendChild(divListeUstensiles)
+    // divListeIngredients.appendChild(ulIngredients)
+    divListeAppareils.appendChild(ulAppareils)
+    // divListeUstensiles.appendChild(ulUstensiles)
+}
 
+function displaySuggestionUstensiles(tableauAffichage) {
+    // const divIngredients = document.querySelector('#filterIngredients')
+    // const divAppareils = document.querySelector('#filterAppareils')
+    const divUstensiles = document.querySelector('#filterUstensiles')
+    // const divListeIngredients = document.querySelector('#tagSuggestionsIngredients')
+    // const divListeAppareils = document.querySelector('#tagSuggestionsAppareils')
+    const divListeUstensiles = document.querySelector('#tagSuggestionsUstensiles')
+    // // création des éléments
+    const ulUstensilesAncien = document.querySelector('#ulUstensiles')
+    // //retrait de ce qui est affiché
+    divListeUstensiles.removeChild(ulUstensilesAncien)
+    // const ulAppareils = document.createElement('ul')
+    // const ulUstensiles = document.createElement('ul')
+    //  //affectation des attributs
+    // divListeIngredients.setAttribute('id', 'tagSuggestionsIngredients')
+    // divListeAppareils.setAttribute('id', 'tagSuggestionsAppareils')
+    // divListeUstensiles.setAttribute('id', 'tagSuggestionsUstensiles')
+    // divListeIngredients.setAttribute('class', 'tagSuggestions')
+    // divListeAppareils.setAttribute('class', 'tagSuggestions')
+    // divListeUstensiles.setAttribute('class', 'tagSuggestions')
+    //  //ajout des nouvelles informations
+    const ulUstensiles = document.createElement('div')
+    ulUstensiles.setAttribute('class', 'row')
+    ulUstensiles.setAttribute('id', 'ulUstensiles')
+    ulUstensiles.setAttribute('style',
+        'list-style:none;padding-left:15px;white-space:nowrap;')
+    // ulAppareils.setAttribute('class', 'row')
+    // ulAppareils.setAttribute('id', 'ulAppareils')
+    // ulUstensiles.setAttribute('class', 'row')
+    // ulUstensiles.setAttribute('id', 'ulUstensiles')
+    //  //renseignement des contenus
+    tableauAffichage.forEach(e => {
+        const liAffichage = filterSuggestionCreation(e, 'tagUstensiles')
+        liAffichage.setAttribute('style',
+            'overflow:hidden;text-overflow: ellipsis;font-size: 0.7rem;font-weight: lighter;')
+        ulUstensiles.appendChild(liAffichage)
+    })
+    // tableauDeTableaux[1].forEach(e =>
+    //     ulAppareils.appendChild(filterSuggestionCreation(e, 'tagAppareils'))
+    //     )
+    // tableauDeTableaux[2].forEach(e =>
+    //     ulUstensiles.appendChild(filterSuggestionCreation(e, 'tagUstensiles'))
+    //     )
+    //  //imbrication des éléments
+    // divIngredients.appendChild(divListeIngredients)
+    // divAppareils.appendChild(divListeAppareils)
+    divUstensiles.appendChild(divListeUstensiles)
+    // divListeIngredients.appendChild(ulIngredients)
+    // divListeAppareils.appendChild(ulAppareils)
+    divListeUstensiles.appendChild(ulUstensiles)
+}

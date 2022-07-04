@@ -27,10 +27,10 @@ function closeFilterIngredients() {
     arrowIngredients.setAttribute('data', 'assets/icons/arrowDown.svg')
 }
 
-// closeFilterIngredients()
+closeFilterIngredients()
 
 filterIngredients.addEventListener('click',openFilterIngredients)
-// filterIngredients.addEventListener('mouseleave',closeFilterIngredients)
+filterIngredients.addEventListener('mouseleave',closeFilterIngredients)
 
 // Appareils
 
@@ -59,10 +59,10 @@ function closeFilterAppareils() {
     arrowAppareils.setAttribute('data', 'assets/icons/arrowDown.svg')
 }
 
-// closeFilterAppareils()
+closeFilterAppareils()
 
 filterAppareils.addEventListener('click',openFilterAppareils)
-// filterAppareils.addEventListener('mouseleave',closeFilterAppareils)
+filterAppareils.addEventListener('mouseleave',closeFilterAppareils)
 
 // Ustensiles
 

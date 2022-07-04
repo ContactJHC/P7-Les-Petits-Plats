@@ -175,7 +175,7 @@ function triTagIngredients(recettes, cible) {
         e.ingredients.forEach(elem => {
             if (elem.ingredient.toLocaleLowerCase().includes(cible)) {
                 tableauApresTri.push(e)
-                tableauAffichageSeulementAvecDoublons.push(elem.ingredient)
+                tableauAffichageSeulementAvecDoublons.push(elem.ingredient.toLocaleLowerCase())
             }
         })
     })
@@ -187,30 +187,37 @@ function triTagIngredients(recettes, cible) {
 
 // input : arr de recettes et str à rechercher dans les appareils
 // output : arr de recettes MAJ en correspondance avec le str à rechercher
+
 function triTagAppareils(recettes, cible) {
     let tableauApresTri = []
+    let tableauAffichageSeulementAvecDoublons = []
     recettes.forEach(e => {
         if (e.appliance.toLocaleLowerCase().includes(cible)) {
             tableauApresTri.push(e)
+            tableauAffichageSeulementAvecDoublons.push(e.appliance.toLocaleLowerCase())
         }  
     })
+    let tableauAffichageSeulement = filtreDoublons(tableauAffichageSeulementAvecDoublons)
     recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
-    console.log('algo tri apres triTagAppareils donne :', recettesMAJ);
-    return recettesMAJ
+    console.log('algo tri affichage apres triTagAppareils donne :', tableauAffichageSeulement);
+    return tableauAffichageSeulement
 }
 
 function triTagUstensiles(recettes, cible) {
     let tableauApresTri = []
+    let tableauAffichageSeulementAvecDoublons = []
     recettes.forEach(e => {
         e.ustensils.forEach(eleme => {
             if (eleme.toLocaleLowerCase().includes(cible)) {
                 tableauApresTri.push(e)
+                tableauAffichageSeulementAvecDoublons.push(eleme.toLocaleLowerCase())
             }
         })
     })
+    let tableauAffichageSeulement = filtreDoublons(tableauAffichageSeulementAvecDoublons)
     recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
-    console.log('algo tri apres triTagUstensiles donne :', recettesMAJ);
-    return recettesMAJ
+    console.log('algo tri affichage apres triTagUstensiles donne :', tableauAffichageSeulement);
+    return tableauAffichageSeulement
 }
 
 // fonction sans doublons donc sans tri de doublons mais problème avec ustensiles

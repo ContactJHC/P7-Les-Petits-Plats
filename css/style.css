@@ -186,6 +186,9 @@ header #logo {
     font-size: 0.9rem;
     border: none;
     width: 80%;
+    font-weight: bold;
+    color: white;
+
  }
 
 .saisieFiltre::placeholder {
