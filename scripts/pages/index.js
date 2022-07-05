@@ -19,7 +19,7 @@ triRecherchePrincipale(test)
 //     }
 // )
 
-// initialisation de la page : affichage des recettes et des tags
+// initialisation de la page : affichage des recettes et des suggestions de filtres
 recettesMAJ = [].concat(recipes) 
 recipesDisplay(recettesMAJ)
 let pretraitement = updateFiltres(recettesMAJ)
@@ -36,6 +36,7 @@ saisie.addEventListener('keyup', ()=>{
         recipesDisplay(result)
         suggestionsDelete()
         suggestionsDisplay(updateFiltres(result))
+        recettesMAJ = [].concat(result)
 console.log(result);
 
     } else {

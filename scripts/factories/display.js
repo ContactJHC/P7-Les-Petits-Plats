@@ -19,6 +19,15 @@ function recipesDisplay(tableauRecettes) {
     tableauRecettes.forEach( e => 
         divRow.appendChild(recipe(e))
     )
+    if (tableauRecettes.length == 0) {
+        const infoZeroAffichage = document.createElement('div')
+        infoZeroAffichage.setAttribute('id','zeroAffichage')
+        infoZeroAffichage.style.width = '90%'
+        infoZeroAffichage.style.margin = 'auto'
+        infoZeroAffichage.textContent = 
+        'Aucune recette ne correspond à votre critère… vous pouvez chercher « tarte aux pommes », « poisson », etc.'
+        divRow.appendChild(infoZeroAffichage)
+    }
     // imbrication des éléments
     mainTag.appendChild(recipesSection)
     recipesSection.appendChild(divRow)
