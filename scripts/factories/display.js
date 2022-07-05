@@ -19,6 +19,7 @@ function recipesDisplay(tableauRecettes) {
     tableauRecettes.forEach( e => 
         divRow.appendChild(recipe(e))
     )
+    // gestion du cas où aucune recette ne correspond à la saisie
     if (tableauRecettes.length == 0) {
         const infoZeroAffichage = document.createElement('div')
         infoZeroAffichage.setAttribute('id','zeroAffichage')

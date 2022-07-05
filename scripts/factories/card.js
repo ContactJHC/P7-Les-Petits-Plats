@@ -49,7 +49,7 @@ function recipe(dataOneRecipe) {
     const divCard__texte__body__notice = document.createElement('div')
     const divCard__texte__body__notice__p = document.createElement('p')
     // affectation des attributs hors ingrédients
-    divCard.setAttribute('class', 'recipesSection__card col-4')
+    divCard.setAttribute('class', 'recipesSection__card col-12 col-md-6 col-lg-4')
     divCard__image.setAttribute('class', 'recipesSection__card__imageFictive')
     divCard__texte.setAttribute('class', 'recipesSection__card__texteFictif')
     divCard__texte__header.setAttribute('class', 'recipesSection__card__texteFictif__header')
