@@ -20,7 +20,7 @@ function openFilterIngredients() {
 }
 
 function closeFilterIngredients() {
-    filterIngredients.setAttribute('class', 'filter col-2')
+    filterIngredients.setAttribute('class', 'filter col-12 col-sm-9 col-md-3 col-lg-2')
     saisieFiltreIngredients.setAttribute('class', 'saisieFiltre')
     saisieFiltreIngredients.setAttribute('placeholder', 'Ingrédients')
     tagSuggestionsIngredients.style.display = 'none'
@@ -52,7 +52,7 @@ function openFilterAppareils() {
 }
 
 function closeFilterAppareils() {
-    filterAppareils.setAttribute('class', 'filter col-2')
+    filterAppareils.setAttribute('class', 'filter col-12 col-sm-9 col-md-3 col-lg-2')
     saisieFiltreAppareils.setAttribute('class', 'saisieFiltre')
     saisieFiltreAppareils.setAttribute('placeholder', 'Appareils')
     tagSuggestionsAppareils.style.display = 'none'
@@ -84,7 +84,7 @@ function openFilterUstensiles() {
 }
 
 function closeFilterUstensiles() {
-    filterUstensiles.setAttribute('class', 'filter col-2')
+    filterUstensiles.setAttribute('class', 'filter col-12 col-sm-9 col-md-3 col-lg-2')
     saisieFiltreUstensiles.setAttribute('class', 'saisieFiltre')
     saisieFiltreUstensiles.setAttribute('placeholder', 'Ustensiles')
     tagSuggestionsUstensiles.style.display = 'none'

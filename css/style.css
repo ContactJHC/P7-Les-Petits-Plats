@@ -13,6 +13,10 @@ clair de text de card : #e7e7e7ff
 
 */
 
+body {
+    min-width: 220px;
+}
+
 header {
     text-align: center;
     margin-top: 10px;
@@ -20,6 +24,7 @@ header {
 
 header #logo {
     width: 30%;
+    min-width: 200px;
 }
 
 #recipesSection {
@@ -142,6 +147,7 @@ header #logo {
 
 #searchSection__filters .filter {
     position: relative;
+    margin-bottom: 2%;
     margin-right: 2%;
     height: 4rem;
     border-radius: 5px;
