@@ -10,7 +10,7 @@ const arrowIngredients = document.querySelector('#filterIngredients object')
 
 function openFilterIngredients() {
     
-    filterIngredients.setAttribute('class', 'filter filter--onclick col-7')
+    filterIngredients.setAttribute('class', 'filter filter--onclick col-12 col-sm-11 col-md-5 col-lg-7')
     saisieFiltreIngredients.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreIngredients.setAttribute('placeholder', 'Rechercher un ingrédient')
     tagSuggestionsIngredients.style.display = 'block'
@@ -42,7 +42,7 @@ const arrowAppareils = document.querySelector('#filterAppareils object')
 
 function openFilterAppareils() {
     
-    filterAppareils.setAttribute('class', 'filter filter--onclick col-7')
+    filterAppareils.setAttribute('class', 'filter filter--onclick col-12 col-sm-11 col-md-5 col-lg-7')
     saisieFiltreAppareils.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreAppareils.setAttribute('placeholder', 'Rechercher un appareil')
     tagSuggestionsAppareils.style.display = 'block'
@@ -74,7 +74,7 @@ const arrowUstensiles = document.querySelector('#filterUstensiles object')
 
 function openFilterUstensiles() {
     
-    filterUstensiles.setAttribute('class', 'filter filter--onclick col-7')
+    filterUstensiles.setAttribute('class', 'filter filter--onclick col-12 col-sm-11 col-md-5 col-lg-7')
     saisieFiltreUstensiles.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreUstensiles.setAttribute('placeholder', 'Rechercher un ustensile')
     tagSuggestionsUstensiles.style.display = 'block'
