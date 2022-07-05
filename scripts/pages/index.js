@@ -31,7 +31,7 @@ saisie.addEventListener('keyup', ()=>{
     let valeur = saisie.value.toLocaleLowerCase()
     if (valeur.length > 2) {
         // màj de l'affichage et des filtres
-        let result = triRecherchePrincipale(recettesMAJ)
+        let result = triRecherchePrincipale(recipes)
         recipesDelete()
         recipesDisplay(result)
         suggestionsDelete()
