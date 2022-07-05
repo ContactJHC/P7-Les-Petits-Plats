@@ -36,16 +36,19 @@ header #logo {
 }
 
 .recipesSection__card__imageFictive {
-    height: 150px;
+    height: 180px;
     background-color: #c7bebeff;
 }
 
 .recipesSection__card__texteFictif {
-    height: 150px;
+    height: 180px;
 }
 
 .recipesSection__card__notice p {
     overflow: hidden;
+    max-width: 95%;
+    max-height: 120px;
+    min-width: 40px;
 }
 
 #searchSection {
@@ -314,6 +317,7 @@ header #logo {
 
 .recipesSection__card__texteFictif__body p {
     margin: 0;
+    text-overflow: ellipsis;
 }
 
 .recipesSection__card__notice {
@@ -321,8 +325,17 @@ header #logo {
     padding-left: 1rem;
     font-size: 0.6rem;
     overflow: hidden;
-    max-height: max-content;
+    max-height: 100px;
     text-overflow: ellipsis ;
     word-break: keep-all;
 }
 
+@media (max-width: 768px) {
+    .recipesSection__card__texteFictif__body, .recipesSection__card__texteFictif__header {
+        flex-direction: column;
+    }
+
+    .recipesSection__card__texteFictif {
+        height: fit-content;
+    }
+}
