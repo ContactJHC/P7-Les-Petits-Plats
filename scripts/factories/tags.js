@@ -60,7 +60,7 @@ function filterSuggestionCreation (string, typeTag) {
     // création des éléments HTML
     liSuggestion = document.createElement('li')
     // affectation des attributs
-    liSuggestion.setAttribute('class', 'col-4')
+    liSuggestion.setAttribute('class', 'col-12 col-sm-6 col-md-4')
     // renseignement des contenus
     liSuggestion.textContent = string
     liSuggestion.addEventListener('click', () => {
