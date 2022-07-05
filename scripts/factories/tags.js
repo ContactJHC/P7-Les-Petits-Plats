@@ -9,7 +9,7 @@ function tagsCreation (string,typeTag) {
     const closeTag = document.createElement('object')
     // affectation des attributs hors couleurs
     divTag.setAttribute('id', `divID${string}`)
-    divTag.setAttribute('class', 'oneSelectedFilter col-2')
+    divTag.setAttribute('class', 'oneSelectedFilter col-9 col-sm-3 col-md-2')
     pTag.setAttribute('class', 'listeDeTags')
     closeTag.setAttribute('id', `closeID${string}`)
     closeTag.setAttribute('data', 'assets/icons/closeIngredient.svg')
@@ -21,15 +21,10 @@ function tagsCreation (string,typeTag) {
         if (divFiltersRow) {
             divFiltersRow.removeChild(divTag)
             listeDeTagsATester = document.querySelectorAll('.listeDeTags')
-            console.log('la liste de li', listeDeTagsATester);
-            console.log('recetteMAJ avant concat', recettesMAJ);
             recettesMAJ = [].concat(recipes)
-            console.log('recetteMAJ apres concat', recettesMAJ);
             refresh(recettesMAJ)
             listeDeTagsATester.forEach( (e,i) => {
-                console.log('e.innerText :', e.innerText)
                 recettesMAJ = triApresSuppressionTag(recettesMAJ, e.innerText) 
-                console.log('recetteMAJ apres boucle', i, recettesMAJ);
                 refresh(recettesMAJ)
             })
         } else {
