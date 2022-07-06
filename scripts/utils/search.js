@@ -187,8 +187,6 @@ function triTagIngredients(recettes, cible) {
         })
     })
     let tableauAffichageSeulement = filtreDoublons(tableauAffichageSeulementAvecDoublons)
-    recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
-    console.log('algo tri affichage apres triTagIngredient donne :', tableauAffichageSeulement);
     return tableauAffichageSeulement
 }
 
@@ -205,8 +203,6 @@ function triTagAppareils(recettes, cible) {
         }  
     })
     let tableauAffichageSeulement = filtreDoublons(tableauAffichageSeulementAvecDoublons)
-    recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
-    console.log('algo tri affichage apres triTagAppareils donne :', tableauAffichageSeulement);
     return tableauAffichageSeulement
 }
 
@@ -222,8 +218,6 @@ function triTagUstensiles(recettes, cible) {
         })
     })
     let tableauAffichageSeulement = filtreDoublons(tableauAffichageSeulementAvecDoublons)
-    recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
-    console.log('algo tri affichage apres triTagUstensiles donne :', tableauAffichageSeulement);
     return tableauAffichageSeulement
 }
 

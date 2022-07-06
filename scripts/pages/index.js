@@ -65,13 +65,8 @@ inputIngredients.addEventListener('keyup', () => {
     if (inputIngredients.value.length > 0) {
         let tableauAffichage = triTagIngredients(
             recettesMAJ,inputIngredients.value.toLocaleLowerCase())
-        refresh(recettesMAJ)
         displaySuggestionIngredients(tableauAffichage)
-    } else {
-        refresh(recettesMAJavantRecherche)
-        recettesMAJ = [].concat(recettesMAJavantRecherche)
-    }
-    // fin du keyup ingrédients
+    } 
 })
 
 inputAppareils.addEventListener('keyup', () => {
@@ -79,11 +74,7 @@ inputAppareils.addEventListener('keyup', () => {
     if (inputAppareils.value.length > 0) {
         let tableauAffichage = triTagAppareils(
             recettesMAJ,inputAppareils.value.toLocaleLowerCase())
-        refresh(recettesMAJ)
         displaySuggestionAppareils(tableauAffichage)
-    } else {
-        refresh(recettesMAJavantRecherche)
-        recettesMAJ = [].concat(recettesMAJavantRecherche)
     }
 // fin du keyup appareils
 })
@@ -93,11 +84,7 @@ inputUstensiles.addEventListener('keyup', () => {
     if (inputUstensiles.value.length > 0) {
         let tableauAffichage = triTagUstensiles(
             recettesMAJ,inputUstensiles.value.toLocaleLowerCase())
-        refresh(recettesMAJ)
         displaySuggestionUstensiles(tableauAffichage)
-    } else {
-        refresh(recettesMAJavantRecherche)
-        recettesMAJ = [].concat(recettesMAJavantRecherche)
     }
     // fin du keyup ustensiles
 })
