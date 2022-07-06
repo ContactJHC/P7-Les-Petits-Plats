@@ -74,32 +74,43 @@ function triRecherchePrincipale(recipes) {
     let valeur = saisie.value.toLocaleLowerCase()
     let tableauApresTri = []
         if (valeur.length > 2) {
-            recipes.forEach(e => {
-                if (e.name.toLocaleLowerCase().includes(valeur)) {
-                    tableauApresTri.push(e)
-                }  
-                // const tableauDeux = e.ingredients.filter((elem)=>{
-                //     return elem.ingredient.toLocaleLowerCase().includes(valeur)
-                // })
-                // if (tableauDeux !== null && tableauDeux.length > 0) {
-                //     tableauApresTri.push(e)
-                // } 
-                // ci-dessus pour remplacer 88 à 92 
-                e.ingredients.forEach(elem => {
-                    if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
-                        tableauApresTri.push(e)
-                    }
-                })
-                if (e.description.includes(valeur)) {
-                    tableauApresTri.push(e) 
-                }
-                e.ustensils.forEach(eleme => {
-                    if (eleme.includes(valeur)) {
-                        tableauApresTri.push(e)
-                    }
-                })
+            let tableauNoms = recipes.filter((recipe) => {
+                // recipe.name.toLocaleLowerCase().includes(valeur)
+                // || 
+                recipe.description.toLocaleLowerCase().includes(valeur)
+                console.log(recipe.description);
+            // fin du filter
             })
+            console.log(tableauNoms);
+        // fin du if
         }
+
+            // recipes.forEach(e => {
+            //     if (e.name.toLocaleLowerCase().includes(valeur)) {
+            //         tableauApresTri.push(e)
+            //     }  
+            //     const tableauDeux = e.ingredients.filter((elem)=>{
+            //         console.log(elem.ingredient.toLocaleLowerCase().includes(valeur));
+            //         return elem.ingredient.toLocaleLowerCase().includes(valeur)
+            //     })
+            //     console.log(tableauDeux);                
+            //     if (tableauDeux !== null && tableauDeux.length > 0) {
+            //         tableauApresTri.push(e)
+            //     } 
+            //     // e.ingredients.forEach(elem => {
+            //     //     if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
+            //     //         tableauApresTri.push(e)
+            //     //     }
+            //     // })
+            //     if (e.description.includes(valeur)) {
+            //         tableauApresTri.push(e) 
+            //     }
+            //     e.ustensils.forEach(eleme => {
+            //         if (eleme.includes(valeur)) {
+            //             tableauApresTri.push(e)
+            //         }
+            //     })
+            // })
         recettesMAJ = [].concat(tableauApresTri)
     return filtreDoublons(tableauApresTri)
 }
