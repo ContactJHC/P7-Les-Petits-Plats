@@ -169,7 +169,6 @@ function triApresSuppressionTag(recettes, cible) {
         })
     })
     recettesMAJ = [].concat(filtreDoublons(tableauApresTri))
-    console.log('algo tri apres suppression donne :', recettesMAJ);
     return recettesMAJ
 }
 

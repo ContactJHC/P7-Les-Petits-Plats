@@ -84,9 +84,13 @@ header #logo {
     right: 0;   
 }
 
-#searchSection__searchBar button object {
+#searchSection__searchBar button img {
     width: 65%;
     height: 65%;
+}
+
+#searchSection__searchBar button img:hover {
+    cursor: pointer;
 }
 
 #searchSection__searchBar #mainSuggestions .oneMainSuggestion {
@@ -238,12 +242,16 @@ header #logo {
 }
 
 
-#searchSection__filters .filter object {
+#searchSection__filters .filter img {
     height: 50%;
     position: absolute;
     right: 5%;
     top: 25%;
 
+}
+
+#searchSection__filters .filter img:hover {
+    cursor: pointer;
 }
 
 .saisieFiltre:hover {

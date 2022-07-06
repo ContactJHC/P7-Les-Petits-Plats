@@ -6,7 +6,7 @@
 const filterIngredients = document.querySelector('#filterIngredients')
 const saisieFiltreIngredients = document.querySelector('#saisieFiltreIngredients')
 const tagSuggestionsIngredients =document.querySelector('#tagSuggestionsIngredients')
-const arrowIngredients = document.querySelector('#filterIngredients object')
+const arrowIngredients = document.querySelector('#filterIngredients img')
 
 function openFilterIngredients() {
     
@@ -14,7 +14,8 @@ function openFilterIngredients() {
     saisieFiltreIngredients.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreIngredients.setAttribute('placeholder', 'Rechercher un ingrédient')
     tagSuggestionsIngredients.style.display = 'block'
-    arrowIngredients.setAttribute('data', 'assets/icons/arrowUp.svg')
+    arrowIngredients.setAttribute('src', 'assets/icons/arrowUp.svg')
+    arrowIngredients.setAttribute('alt', 'icône de flèche montante')
 
 
 }
@@ -24,12 +25,20 @@ function closeFilterIngredients() {
     saisieFiltreIngredients.setAttribute('class', 'saisieFiltre')
     saisieFiltreIngredients.setAttribute('placeholder', 'Ingrédients')
     tagSuggestionsIngredients.style.display = 'none'
-    arrowIngredients.setAttribute('data', 'assets/icons/arrowDown.svg')
+    arrowIngredients.setAttribute('src', 'assets/icons/arrowDown.svg')
+    arrowIngredients.setAttribute('alt', 'icône de flèche descendante')
 }
 
 closeFilterIngredients()
 
-filterIngredients.addEventListener('click',openFilterIngredients)
+arrowIngredients.addEventListener('click', () => {
+    if (saisieFiltreIngredients.classList.contains('filtreOuvert')) {
+        closeFilterIngredients()
+    } else {
+        openFilterIngredients()
+    }
+})
+saisieFiltreIngredients.addEventListener('click',openFilterIngredients)
 filterIngredients.addEventListener('mouseleave',closeFilterIngredients)
 
 // Appareils
@@ -37,7 +46,7 @@ filterIngredients.addEventListener('mouseleave',closeFilterIngredients)
 const filterAppareils = document.querySelector('#filterAppareils')
 const saisieFiltreAppareils = document.querySelector('#saisieFiltreAppareils')
 const tagSuggestionsAppareils =document.querySelector('#tagSuggestionsAppareils')
-const arrowAppareils = document.querySelector('#filterAppareils object')
+const arrowAppareils = document.querySelector('#filterAppareils img')
 
 
 function openFilterAppareils() {
@@ -46,8 +55,8 @@ function openFilterAppareils() {
     saisieFiltreAppareils.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreAppareils.setAttribute('placeholder', 'Rechercher un appareil')
     tagSuggestionsAppareils.style.display = 'block'
-    arrowAppareils.setAttribute('data', 'assets/icons/arrowUp.svg')
-
+    arrowAppareils.setAttribute('src', 'assets/icons/arrowUp.svg')
+    arrowAppareils.setAttribute('alt', 'icône de flèche montante')
 
 }
 
@@ -56,12 +65,21 @@ function closeFilterAppareils() {
     saisieFiltreAppareils.setAttribute('class', 'saisieFiltre')
     saisieFiltreAppareils.setAttribute('placeholder', 'Appareils')
     tagSuggestionsAppareils.style.display = 'none'
-    arrowAppareils.setAttribute('data', 'assets/icons/arrowDown.svg')
+    arrowAppareils.setAttribute('src', 'assets/icons/arrowDown.svg')
+    arrowAppareils.setAttribute('alt', 'icône de flèche descendante')
+
 }
 
 closeFilterAppareils()
 
-filterAppareils.addEventListener('click',openFilterAppareils)
+arrowAppareils.addEventListener('click', () => {
+    if (saisieFiltreAppareils.classList.contains('filtreOuvert')) {
+        closeFilterAppareils()
+    } else {
+        openFilterAppareils()
+    }
+})
+saisieFiltreAppareils.addEventListener('click',openFilterAppareils)
 filterAppareils.addEventListener('mouseleave',closeFilterAppareils)
 
 // Ustensiles
@@ -69,7 +87,7 @@ filterAppareils.addEventListener('mouseleave',closeFilterAppareils)
 const filterUstensiles = document.querySelector('#filterUstensiles')
 const saisieFiltreUstensiles = document.querySelector('#saisieFiltreUstensiles')
 const tagSuggestionsUstensiles =document.querySelector('#tagSuggestionsUstensiles')
-const arrowUstensiles = document.querySelector('#filterUstensiles object')
+const arrowUstensiles = document.querySelector('#filterUstensiles img')
 
 
 function openFilterUstensiles() {
@@ -78,8 +96,8 @@ function openFilterUstensiles() {
     saisieFiltreUstensiles.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreUstensiles.setAttribute('placeholder', 'Rechercher un ustensile')
     tagSuggestionsUstensiles.style.display = 'block'
-    arrowUstensiles.setAttribute('data', 'assets/icons/arrowUp.svg')
-
+    arrowUstensiles.setAttribute('src', 'assets/icons/arrowUp.svg')
+    arrowUstensiles.setAttribute('alt', 'icône de flèche montante')
 
 }
 
@@ -88,12 +106,21 @@ function closeFilterUstensiles() {
     saisieFiltreUstensiles.setAttribute('class', 'saisieFiltre')
     saisieFiltreUstensiles.setAttribute('placeholder', 'Ustensiles')
     tagSuggestionsUstensiles.style.display = 'none'
-    arrowUstensiles.setAttribute('data', 'assets/icons/arrowDown.svg')
+    arrowUstensiles.setAttribute('src', 'assets/icons/arrowDown.svg')
+    arrowUstensiles.setAttribute('alt', 'icône de flèche descendante')
+
 }
 
 closeFilterUstensiles()
 
-filterUstensiles.addEventListener('click',openFilterUstensiles)
+arrowUstensiles.addEventListener('click', () => {
+    if (saisieFiltreUstensiles.classList.contains('filtreOuvert')) {
+        closeFilterUstensiles()
+    } else {
+        openFilterUstensiles()
+    }
+})
+saisieFiltreUstensiles.addEventListener('click',openFilterUstensiles)
 filterUstensiles.addEventListener('mouseleave',closeFilterUstensiles)
 
 

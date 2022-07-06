@@ -16,14 +16,18 @@
     <section id="searchSection">
         <div id="searchSection__searchBar">
             <input type="text" placeholder="Rechercher une recette">
-            <button><object data="assets/icons/magnifier.svg" type="image/svg+xml"></object></button>
+            <button>
+                <img src="assets/icons/magnifier.svg" alt="icône de loupe">
+                <!-- <object data="assets/icons/magnifier.svg" type="image/svg+xml"></object> -->
+            </button>
             <div id="mainSuggestions"></div>
         </div>
         <div id="searchSection__selectedFilters" class="row"></div>        
         <div id="searchSection__filters" class="row">
-            <div id="filterIngredients" class="filter col-12 col-md-2">                
+            <div id="filterIngredients" tabindex="0" class="filter col-12 col-md-2">                
                 <input id="saisieFiltreIngredients" class="saisieFiltre filtreOuvert" type="text" placeholder="Ingrédients">
-                <object data="assets/icons/arrowUp.svg" type="image/svg+xml"></object>
+                <img src="assets/icons/arrowDown.svg" alt="icône de flèche descendante">
+                <!-- <object data="assets/icons/arrowUp.svg" type="image/svg+xml"></object>  -->
                 <div id="tagSuggestionsIngredients" class="tagSuggestions">
                     <!-- <ul class="row">
                         <li class="col-4">Coco avec du beurre</li>
@@ -49,9 +53,10 @@
                     </ul> -->
                 </div>
             </div>
-            <div id="filterAppareils" class="filter col-12 col-md-2">
+            <div id="filterAppareils" tabindex="0" class="filter col-12 col-md-2">
                 <input id="saisieFiltreAppareils" class="saisieFiltre" type="text" placeholder="Appareils">
-                <object data="assets/icons/arrowDown.svg" type="image/svg+xml"></object>
+                <img src="assets/icons/arrowDown.svg" alt="icône de flèche descendante">
+                <!-- <object data="assets/icons/arrowDown.svg" type="image/svg+xml"></object> -->
                 <div id="tagSuggestionsAppareils" class="tagSuggestions">
                     <!-- <ul class="row">
                         <li class="col-4">Coco avec du beurre</li>
@@ -77,9 +82,10 @@
                     </ul> -->
                 </div>
             </div>
-            <div id="filterUstensiles" class="filter col-12 col-md-2">
+            <div id="filterUstensiles" tabindex="0" class="filter col-12 col-md-2">
                 <input id="saisieFiltreUstensiles" class="saisieFiltre" type="text" placeholder="Ustensiles">
-                <object data="assets/icons/arrowDown.svg" onclick="alert('ça clique')" type="image/svg+xml"></object>
+                <img src="assets/icons/arrowDown.svg" alt="icône de flèche descendante">
+                <!-- <object data="assets/icons/arrowDown.svg" onclick="alert('ça clique')" type="image/svg+xml"></object> -->
                 <div id="tagSuggestionsUstensiles" class="tagSuggestions">
                     <!-- <ul class="row">
                         <li class="col-4">Coco avec du beurre</li>

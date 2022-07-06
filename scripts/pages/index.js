@@ -37,7 +37,6 @@ saisie.addEventListener('keyup', ()=>{
         suggestionsDelete()
         suggestionsDisplay(updateFiltres(result))
         recettesMAJ = [].concat(result)
-console.log(result);
 
     } else {
         // remise à zéro de l'affichage si aucun tag sélectionné 
