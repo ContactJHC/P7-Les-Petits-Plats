@@ -15,7 +15,6 @@ function tagsCreation (string,typeTag) {
     closeTag.setAttribute('data', 'assets/icons/closeIngredient.svg')
     closeTag.setAttribute('type', 'image/svg+xml')
     closeTag.style.pointerEvents = 'all'
-    // closeTag.addEventListener('mouseover', ()=>{console.log('mouseover effectif');})
     closeTag.addEventListener('mouseover', () => {
         const divFiltersRow = document.querySelector('#searchSection__selectedFilters')
         if (divFiltersRow) {
