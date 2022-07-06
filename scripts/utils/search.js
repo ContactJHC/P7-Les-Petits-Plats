@@ -80,13 +80,6 @@ function triRecherchePrincipale(recipes) {
                 if (recipes[n].name.toLocaleLowerCase().includes(valeur)) {
                     tableauApresTri.push(recipes[n])  
                 }
-                // const tableauDeux = e.ingredients.filter((elem)=>{
-                //     return elem.ingredient.toLocaleLowerCase().includes(valeur)
-                // })
-                // if (tableauDeux !== null && tableauDeux.length > 0) {
-                //     tableauApresTri.push(e)
-                // } 
-                // ci-dessus pour remplacer 88 à 92
                 let i = 0
                 const j = recipes[n].ingredients.length
                 while (i < j) {
