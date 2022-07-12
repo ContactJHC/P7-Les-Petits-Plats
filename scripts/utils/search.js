@@ -77,14 +77,7 @@ function triRecherchePrincipale(recipes) {
             recipes.forEach(e => {
                 if (e.name.toLocaleLowerCase().includes(valeur)) {
                     tableauApresTri.push(e)
-                }  
-                // const tableauDeux = e.ingredients.filter((elem)=>{
-                //     return elem.ingredient.toLocaleLowerCase().includes(valeur)
-                // })
-                // if (tableauDeux !== null && tableauDeux.length > 0) {
-                //     tableauApresTri.push(e)
-                // } 
-                // ci-dessus pour remplacer 88 à 92 
+                } 
                 e.ingredients.forEach(elem => {
                     if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
                         tableauApresTri.push(e)
