@@ -152,6 +152,10 @@ header #logo {
     margin-top: 10px;
 }
 
+.oneSelectedFilter:hover {
+    cursor: pointer;
+}
+
 #searchSection__filters .filter {
     position: relative;
     margin-bottom: 2%;
@@ -161,6 +165,10 @@ header #logo {
     color: white;
     font-weight: bolder;
     font-size: 1rem;
+}
+
+#searchSection__filters .filter:hover{
+    cursor: pointer;
 }
 
 #searchSection__filters .filter--onclick {

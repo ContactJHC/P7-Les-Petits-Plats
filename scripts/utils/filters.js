@@ -13,6 +13,7 @@ function openFilterIngredients() {
     filterIngredients.setAttribute('class', 'filter filter--onclick col-12 col-sm-11 col-md-5 col-lg-7')
     saisieFiltreIngredients.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreIngredients.setAttribute('placeholder', 'Rechercher un ingrédient')
+    saisieFiltreIngredients.focus()
     tagSuggestionsIngredients.style.display = 'block'
     arrowIngredients.setAttribute('src', 'assets/icons/arrowUp.svg')
     arrowIngredients.setAttribute('alt', 'icône de flèche montante')
@@ -31,14 +32,14 @@ function closeFilterIngredients() {
 
 closeFilterIngredients()
 
-arrowIngredients.addEventListener('click', () => {
+filterIngredients.addEventListener('click', () => {
     if (saisieFiltreIngredients.classList.contains('filtreOuvert')) {
         closeFilterIngredients()
     } else {
         openFilterIngredients()
     }
 })
-saisieFiltreIngredients.addEventListener('click',openFilterIngredients)
+// saisieFiltreIngredients.addEventListener('click',openFilterIngredients)
 filterIngredients.addEventListener('mouseleave',closeFilterIngredients)
 
 // Appareils
@@ -54,6 +55,7 @@ function openFilterAppareils() {
     filterAppareils.setAttribute('class', 'filter filter--onclick col-12 col-sm-11 col-md-5 col-lg-7')
     saisieFiltreAppareils.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreAppareils.setAttribute('placeholder', 'Rechercher un appareil')
+    saisieFiltreAppareils.focus()
     tagSuggestionsAppareils.style.display = 'block'
     arrowAppareils.setAttribute('src', 'assets/icons/arrowUp.svg')
     arrowAppareils.setAttribute('alt', 'icône de flèche montante')
@@ -72,14 +74,14 @@ function closeFilterAppareils() {
 
 closeFilterAppareils()
 
-arrowAppareils.addEventListener('click', () => {
+filterAppareils.addEventListener('click', () => {
     if (saisieFiltreAppareils.classList.contains('filtreOuvert')) {
         closeFilterAppareils()
     } else {
         openFilterAppareils()
     }
 })
-saisieFiltreAppareils.addEventListener('click',openFilterAppareils)
+// saisieFiltreAppareils.addEventListener('click',openFilterAppareils)
 filterAppareils.addEventListener('mouseleave',closeFilterAppareils)
 
 // Ustensiles
@@ -95,6 +97,7 @@ function openFilterUstensiles() {
     filterUstensiles.setAttribute('class', 'filter filter--onclick col-12 col-sm-11 col-md-5 col-lg-7')
     saisieFiltreUstensiles.setAttribute('class', 'saisieFiltre filtreOuvert')
     saisieFiltreUstensiles.setAttribute('placeholder', 'Rechercher un ustensile')
+    saisieFiltreUstensiles.focus()
     tagSuggestionsUstensiles.style.display = 'block'
     arrowUstensiles.setAttribute('src', 'assets/icons/arrowUp.svg')
     arrowUstensiles.setAttribute('alt', 'icône de flèche montante')
@@ -113,14 +116,14 @@ function closeFilterUstensiles() {
 
 closeFilterUstensiles()
 
-arrowUstensiles.addEventListener('click', () => {
+filterUstensiles.addEventListener('click', () => {
     if (saisieFiltreUstensiles.classList.contains('filtreOuvert')) {
         closeFilterUstensiles()
     } else {
         openFilterUstensiles()
     }
 })
-saisieFiltreUstensiles.addEventListener('click',openFilterUstensiles)
+// saisieFiltreUstensiles.addEventListener('click',openFilterUstensiles)
 filterUstensiles.addEventListener('mouseleave',closeFilterUstensiles)
 
 

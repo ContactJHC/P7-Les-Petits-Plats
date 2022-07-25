@@ -6,17 +6,17 @@ function tagsCreation (string,typeTag) {
     // création des éléments HTML
     const divTag = document.createElement('div')
     const pTag = document.createElement('p')
-    const closeTag = document.createElement('object')
+    const closeTag = document.createElement('img')
     // affectation des attributs hors couleurs
     divTag.setAttribute('id', `divID${string}`)
     divTag.setAttribute('class', 'oneSelectedFilter col-9 col-sm-3 col-md-2')
     pTag.setAttribute('class', 'listeDeTags')
     closeTag.setAttribute('id', `closeID${string}`)
-    closeTag.setAttribute('data', 'assets/icons/closeIngredient.svg')
-    closeTag.setAttribute('type', 'image/svg+xml')
+    closeTag.setAttribute('src', 'assets/icons/closeIngredient.svg')
+    closeTag.setAttribute('alt', 'croix de fermeture de tag')
     closeTag.style.pointerEvents = 'all'
     // closeTag.addEventListener('mouseover', ()=>{console.log('mouseover effectif');})
-    closeTag.addEventListener('mouseover', () => {
+    divTag.addEventListener('click', () => {
         const divFiltersRow = document.querySelector('#searchSection__selectedFilters')
         if (divFiltersRow) {
             divFiltersRow.removeChild(divTag)
