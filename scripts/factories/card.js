@@ -21,7 +21,7 @@ function recipe(dataOneRecipe) {
         divCard__texte__body__li__pQuantity.setAttribute('class','quantiteIngredient')
         // renseignement des contenus hors unit
         divCard__texte__body__li__pIngredient.textContent = `${ingredient} : `
-        divCard__texte__body__li__pQuantity.textContent = quantity
+        divCard__texte__body__li__pQuantity.textContent = ` ${quantity} `
         // imbrication des éléments
         divCard__texte__body__li.appendChild(divCard__texte__body__li__pIngredient)
         divCard__texte__body__li.appendChild(divCard__texte__body__li__pQuantity)

@@ -29,25 +29,33 @@ suggestionsDisplay(pretraitement)
 const saisie = document.querySelector('#searchSection__searchBar input')
 saisie.addEventListener('keyup', ()=>{
     let valeur = saisie.value.toLocaleLowerCase()
-    if (valeur.length > 2) {
-        // màj de l'affichage et des filtres
-        let result = triRecherchePrincipale(recipes)
+    if (document.querySelectorAll('.oneSelectedFilter').length !== 0) {
+        console.log(recettesMAJ);
+        let result = triRecherchePrincipaleTagsActifs(recettesMAJ, valeur)
         recipesDelete()
         recipesDisplay(result)
         suggestionsDelete()
         suggestionsDisplay(updateFiltres(result))
-        recettesMAJ = [].concat(result)
-
     } else {
-        // remise à zéro de l'affichage si aucun tag sélectionné 
-        recettesMAJ = [].concat(recipes)
-        recipesDelete()
-        recipesDisplay(recettesMAJ)
-        suggestionsDelete()
-        suggestionsDisplay(updateFiltres(recettesMAJ))
+        if (valeur.length > 2) {
+            // màj de l'affichage et des filtres
+            let result = triRecherchePrincipale(recipes)
+            recipesDelete()
+            recipesDisplay(result)
+            suggestionsDelete()
+            suggestionsDisplay(updateFiltres(result))
+            recettesMAJ = [].concat(result)
 
+        } else {
+            // remise à zéro de l'affichage si moins de 3 caractères rentrés
+            recettesMAJ = [].concat(recipes)
+            recipesDelete()
+            recipesDisplay(recettesMAJ)
+            suggestionsDelete()
+            suggestionsDisplay(updateFiltres(recettesMAJ))
+
+        }
     }
-
 // fin du keyup
 })
 

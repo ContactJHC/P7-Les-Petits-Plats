@@ -7,28 +7,52 @@ let recettesMAJ = []
 function triRecherchePrincipale(recipes) {
     const saisie = document.querySelector('#searchSection__searchBar input')
     let valeur = saisie.value.toLocaleLowerCase()
-    let tableauApresTri = []
-        if (valeur.length > 2) {
-            recipes.forEach(e => {
-                if (e.name.toLocaleLowerCase().includes(valeur)) {
+    let tableauApresTri = []    
+    if (valeur.length > 2) {
+        recipes.forEach(e => {
+            if (e.name.toLocaleLowerCase().includes(valeur)) {
+                tableauApresTri.push(e)
+            } 
+            e.ingredients.forEach(elem => {
+                if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
                     tableauApresTri.push(e)
-                } 
-                e.ingredients.forEach(elem => {
-                    if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
-                        tableauApresTri.push(e)
-                    }
-                })
-                if (e.description.includes(valeur)) {
-                    tableauApresTri.push(e) 
                 }
-                e.ustensils.forEach(eleme => {
-                    if (eleme.includes(valeur)) {
-                        tableauApresTri.push(e)
-                    }
-                })
             })
+            if (e.description.includes(valeur)) {
+                tableauApresTri.push(e) 
+            }
+            e.ustensils.forEach(eleme => {
+                if (eleme.includes(valeur)) {
+                    tableauApresTri.push(e)
+                }
+            })
+        })
+    }
+    recettesMAJ = [].concat(tableauApresTri)
+    return filtreDoublons(tableauApresTri)
+}
+
+function triRecherchePrincipaleTagsActifs (recipes, valeur) {
+    let tableauApresTri = []    
+    recipes.forEach(e => {
+        if (e.name.toLocaleLowerCase().includes(valeur)) {
+            tableauApresTri.push(e)
+        } 
+        e.ingredients.forEach(elem => {
+            if (elem.ingredient.toLocaleLowerCase().includes(valeur)) {
+                tableauApresTri.push(e)
+            }
+        })
+        if (e.description.includes(valeur)) {
+            tableauApresTri.push(e) 
         }
-        recettesMAJ = [].concat(tableauApresTri)
+        e.ustensils.forEach(eleme => {
+            if (eleme.includes(valeur)) {
+                tableauApresTri.push(e)
+            }
+        })
+    })
+    // recettesMAJ = [].concat(tableauApresTri)
     return filtreDoublons(tableauApresTri)
 }
 
