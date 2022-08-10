@@ -27,8 +27,19 @@ function tagsCreation (string,typeTag) {
                 recettesMAJ = triApresSuppressionTag(recettesMAJ, e.innerText) 
                 refresh(recettesMAJ)
             })
+            let saizie = document.querySelector('#searchSection__searchBar > input[type=text]').value.toLocaleLowerCase()
+            if (saizie.length >0) {
+                recetteMAJ = triApresSuppressionTag(recettesMAJ, saizie)
+                console.log('il a vu que saisie !== 0')
+                refresh(recettesMAJ)
+            }
         } else {
-            console.log('pas de divRow');}
+            console.log('pas de divRow')
+            if (saizie.length >0) {
+                recetteMAJ = triApresSuppressionTag(recettesMAJ, saizie)
+                console.log('il a vu que saisie !== 0')
+                refresh(recettesMAJ)
+            }}
     })
     // affectation des attributs liés aux couleurs, le bleu de ingrédient
     // étant la couleur par défaut

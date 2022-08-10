@@ -111,9 +111,10 @@ function triApresSuppressionTag(recettes, cible) {
         // instruction ci-dessous donne de plus amples résultats
         // que le tri sur les filtres : flou au niveau des consignes des cas 
         // d'utilisation, à conserver pour éventuelle MAJ post-soutenance
-        // if (e.description.toLocaleLowerCase().includes(cible)) {
-        //     tableauApresTri.push(e) 
-        // }
+        if (e.description.toLocaleLowerCase().includes(cible)) {
+            tableauApresTri.push(e) 
+        }
+        
         e.ustensils.forEach(eleme => {
             if (eleme.toLocaleLowerCase().includes(cible)) {
                 tableauApresTri.push(e)
